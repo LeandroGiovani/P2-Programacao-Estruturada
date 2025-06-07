@@ -58,7 +58,7 @@
             label13 = new Label();
             btnRegistrar = new Button();
             btnLimpar = new Button();
-            button1 = new Button();
+            btnConsultarCep = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -310,21 +310,22 @@
             btnLimpar.Text = "Limpar Campos";
             btnLimpar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnConsultarCep
             // 
-            button1.Location = new Point(226, 264);
-            button1.Name = "button1";
-            button1.Size = new Size(74, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Consultar";
-            button1.UseVisualStyleBackColor = true;
+            btnConsultarCep.Location = new Point(226, 264);
+            btnConsultarCep.Name = "btnConsultarCep";
+            btnConsultarCep.Size = new Size(74, 23);
+            btnConsultarCep.TabIndex = 4;
+            btnConsultarCep.Text = "Consultar";
+            btnConsultarCep.UseVisualStyleBackColor = true;
+            btnConsultarCep.Click += btnConsultarCep_Click;
             // 
             // formCadClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 661);
-            Controls.Add(button1);
+            Controls.Add(btnConsultarCep);
             Controls.Add(btnLimpar);
             Controls.Add(btnRegistrar);
             Controls.Add(txtWhatsApp);
@@ -396,6 +397,6 @@
         private Label label13;
         private Button btnRegistrar;
         private Button btnLimpar;
-        private Button button1;
+        private Button btnConsultarCep;
     }
 }
