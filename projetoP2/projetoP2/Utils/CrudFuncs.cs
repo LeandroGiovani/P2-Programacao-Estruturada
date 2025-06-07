@@ -44,7 +44,8 @@ namespace projetoP2.Utils
             }
             else
             {
-                if (indiceCampoUnico != -1 && linhas.Skip(1).Any(l => l.Split(',')[indiceCampoUnico] == dados[indiceCampoUnico]))
+                if (indiceCampoUnico != -1 &&
+                    linhas.Skip(1).Where((linha, i) => i != indexEdicao).Any(l => l.Split(',')[indiceCampoUnico] == dados[indiceCampoUnico]))
                 {
                     MessageBox.Show("Já existe um registro com este valor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -56,6 +57,26 @@ namespace projetoP2.Utils
             File.WriteAllLines(caminhoCsv, linhas);
             AtualizarDataGrid(dgv, caminhoCsv);
             MessageBox.Show("Registro salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+        public static void ExcluirRegistro(DataGridView dgv, string caminhoCsv, int index)
+        {
+            if (index < 0 || index >= dgv.Rows.Count)
+            {
+                MessageBox.Show("Selecione um registro válido para excluir.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var linhas = File.ReadAllLines(caminhoCsv).ToList();
+
+            if (MessageBox.Show("Você tem certeza que deseja excluir este registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                linhas.RemoveAt(index + 1);
+                File.WriteAllLines(caminhoCsv, linhas);
+                AtualizarDataGrid(dgv, caminhoCsv);
+                MessageBox.Show("Registro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

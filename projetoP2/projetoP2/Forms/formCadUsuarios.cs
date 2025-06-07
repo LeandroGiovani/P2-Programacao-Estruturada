@@ -98,11 +98,6 @@ namespace projetoP2.Forms
             txtSenha.Text = dgvUsuarios.Rows[edicaoIndex].Cells[1].Value.ToString();
         }
 
-        private void ExcluirUsuario()
-        {
-            return;
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string btnText = btnSalvar.Text;
@@ -110,8 +105,17 @@ namespace projetoP2.Forms
             switch (btnText)
             {
                 case "Cadastrar Usuário":
-                    CrudFuncs.CriarOuEditarRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, new string[] { txtNome.Text, txtSenha.Text }, edicaoIndex, 0);
-                    DesabilitarCampos();
+                    if (Sessao.EhAdmin() == true)
+                    {
+                        CrudFuncs.CriarOuEditarRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, new string[] { txtNome.Text, txtSenha.Text }, edicaoIndex, 0);
+                        DesabilitarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Apenas o usuário ADMIN pode cadastrar ou excluir usuários.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     break;
                 case "Atualizar Usuário":
                     if (edicaoIndex == -1)
@@ -122,11 +126,30 @@ namespace projetoP2.Forms
                     CrudFuncs.CriarOuEditarRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, new string[] { txtNome.Text, txtSenha.Text }, edicaoIndex, 0);
                     DesabilitarCampos();
                     break;
-                case "Excluir Usuário":
-                    ExcluirUsuario();
-                    break;
             }
         }
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (Sessao.EhAdmin() == true)
+            {
+                int index = dgvUsuarios.CurrentCell.RowIndex;
+
+                if (index == -1)
+                {
+                    MessageBox.Show("Selecione um usuário para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                CrudFuncs.ExcluirRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, index);
+                DesabilitarCampos();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Apenas o usuário ADMIN pode cadastrar ou excluir usuários.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             menuStrip1 = new MenuStrip();
             cadastrarUsuárioToolStripMenuItem = new ToolStripMenuItem();
             atualizarUsuárioToolStripMenuItem = new ToolStripMenuItem();
@@ -152,8 +152,8 @@
             // 
             // dgvUsuarios
             // 
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Location = new Point(12, 250);
             dgvUsuarios.Name = "dgvUsuarios";
@@ -188,6 +188,7 @@
             btnExcluir.TabIndex = 12;
             btnExcluir.Text = "Excluir Usuário";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnLimpar
             // 
