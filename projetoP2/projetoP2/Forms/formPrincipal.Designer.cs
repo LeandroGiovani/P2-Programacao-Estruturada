@@ -59,6 +59,7 @@
             cadastroDeProdutosToolStripMenuItem.Name = "cadastroDeProdutosToolStripMenuItem";
             cadastroDeProdutosToolStripMenuItem.Size = new Size(133, 20);
             cadastroDeProdutosToolStripMenuItem.Text = "Cadastro de Produtos";
+            cadastroDeProdutosToolStripMenuItem.Click += cadastroDeProdutosToolStripMenuItem_Click;
             // 
             // cadastroDePedidosToolStripMenuItem
             // 

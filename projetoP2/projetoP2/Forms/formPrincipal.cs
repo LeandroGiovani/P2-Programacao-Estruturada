@@ -30,6 +30,12 @@ namespace projetoP2.Forms
             formCadUsuarios.Show();
         }
 
+
+        private void cadastroDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formCadProdutos = new formCadProdutos();
+            formCadProdutos.Show();
+        }
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Você tem certeza que deseja sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -46,5 +52,6 @@ namespace projetoP2.Forms
         {
             Application.Exit();
         }
+
     }
 }
