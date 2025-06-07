@@ -83,6 +83,7 @@ namespace projetoP2.Forms
             txtTelefone.Clear();
             txtWhatsApp.Clear();
             edicaoIndex = -1;
+            btnRegistrar.Text = "Registrar Cliente";
         }
 
         private void formCadClientes_Load(object sender, EventArgs e)
@@ -98,9 +99,13 @@ namespace projetoP2.Forms
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string endereco = $"{txtLogradouro.Text} - {txtNumero.Text} - {txtBairro.Text} - {txtCidade.Text}/{txtEstado.Text}";
+            string endereco = $"{txtCep.Text.Trim()} - {txtLogradouro.Text.Trim()} - {txtNumero.Text.Trim()} - {txtBairro.Text.Trim()} - {txtCidade.Text.Trim()} - {txtEstado.Text.Trim()}";
 
-            CrudFuncs.CriarOuEditarRegistro(
+            if (btnRegistrar.Text == "Registrar Cliente")
+            {
+                edicaoIndex = -1;
+
+                CrudFuncs.CriarOuEditarRegistro(
                 dgvClientes,
                 CsvFuncs.clientesCsv,
                 new string[]
@@ -114,14 +119,77 @@ namespace projetoP2.Forms
                 },
                 edicaoIndex,
                 1
-            );
+                );
 
-            LimparCampos();
+                LimparCampos();
+            } else
+            {
+                if (edicaoIndex == -1)
+                {
+                    MessageBox.Show("Selecione um cliente para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                CrudFuncs.CriarOuEditarRegistro(
+                    dgvClientes,
+                    CsvFuncs.clientesCsv,
+                    new string[]
+                    {
+                        txtNome.Text,
+                        txtCpf.Text,
+                        txtEmail.Text,
+                        endereco,
+                        txtTelefone.Text,
+                        txtWhatsApp.Text
+                    },
+                    edicaoIndex,
+                    1
+                );
+
+                LimparCampos();
+                btnRegistrar.Text = "Registrar Cliente";
+            }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            edicaoIndex = dgvClientes.CurrentCell.RowIndex;
+
+            if (edicaoIndex == -1)
+            {
+                MessageBox.Show("Selecione um usuário para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var valorCelula = dgvClientes.Rows[edicaoIndex].Cells[3].Value;
+
+            if (valorCelula == null)
+            {
+                MessageBox.Show("O campo de endereço está vazio ou inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string[] enderecoArray = valorCelula.ToString()!.Split(" - ");
+
+            txtNome.Text = dgvClientes.Rows[edicaoIndex].Cells[0].Value.ToString();
+            txtCpf.Text = dgvClientes.Rows[edicaoIndex].Cells[1].Value.ToString();
+            txtEmail.Text = dgvClientes.Rows[edicaoIndex].Cells[2].Value.ToString();
+            txtCep.Text = enderecoArray[0].Replace("-", "").Replace(".", "");
+            txtLogradouro.Text = enderecoArray[1];
+            txtNumero.Text = enderecoArray[2];
+            txtBairro.Text = enderecoArray[3];
+            txtCidade.Text = enderecoArray[4];
+            txtEstado.Text = enderecoArray[5];
+            txtTelefone.Text = dgvClientes.Rows[edicaoIndex].Cells[4].Value.ToString();
+            txtWhatsApp.Text = dgvClientes.Rows[edicaoIndex].Cells[5].Value.ToString();
+
+            btnRegistrar.Text = "Atualizar Cliente";
         }
     }
 }

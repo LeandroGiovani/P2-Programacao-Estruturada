@@ -107,6 +107,7 @@
             btnEditar.TabIndex = 14;
             btnEditar.Text = "Editar Cliente";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // label2
             // 
@@ -285,7 +286,7 @@
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(288, 38);
             btnRegistrar.TabIndex = 12;
-            btnRegistrar.Text = "Registrar";
+            btnRegistrar.Text = "Registrar Cliente";
             btnRegistrar.UseVisualStyleBackColor = true;
             btnRegistrar.Click += btnRegistrar_Click;
             // 
