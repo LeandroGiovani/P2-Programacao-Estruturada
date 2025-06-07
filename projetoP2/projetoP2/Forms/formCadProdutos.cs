@@ -48,17 +48,70 @@ namespace projetoP2.Forms
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            edicaoIndex = -1;
+            if (btnRegistrar.Text == "Registrar Produto")
+            {
+                edicaoIndex = -1;
 
-            CrudFuncs.CriarOuEditarRegistro(
-                dgvProdutos,
-                CsvFuncs.produtosCsv,
-                new string[] { txtNomeProduto.Text, $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}", txtDescricao.Text },
-                edicaoIndex,
-                0
-            );
+                CrudFuncs.CriarOuEditarRegistro(
+                    dgvProdutos,
+                    CsvFuncs.produtosCsv,
+                    new string[] { txtNomeProduto.Text, $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}", txtDescricao.Text },
+                    edicaoIndex,
+                    0
+                );
 
+                LimparCampos();
+            }
+            else
+            {
+                if (edicaoIndex == -1)
+                {
+                    MessageBox.Show("Selecione um cliente para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                CrudFuncs.CriarOuEditarRegistro(
+                    dgvProdutos,
+                    CsvFuncs.produtosCsv,
+                    new string[]
+                    {
+                        txtNomeProduto.Text,
+                        $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}",
+                        txtDescricao.Text
+                    },
+                    edicaoIndex,
+                    1
+                );
+
+                LimparCampos();
+                btnRegistrar.Text = "Registrar Cliente";
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
             LimparCampos();
+            edicaoIndex = dgvProdutos.CurrentCell.RowIndex;
+
+            if (edicaoIndex == -1)
+            {
+                MessageBox.Show("Selecione um produto para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var valorProduto = dgvProdutos.Rows[edicaoIndex].Cells[1].Value.ToString();
+
+            if (valorProduto == null)
+            {
+                MessageBox.Show("O campo de preço está vazio ou inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            txtNomeProduto.Text = dgvProdutos.Rows[edicaoIndex].Cells[0].Value.ToString();
+            txtPreco.Text = valorProduto.Replace("R$", "").Replace(" ", "");
+            txtDescricao.Text = dgvProdutos.Rows[edicaoIndex].Cells[2].Value.ToString();
+
+            btnRegistrar.Text = "Atualizar Produto";
         }
     }
 }

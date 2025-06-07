@@ -121,6 +121,7 @@
             btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar Produto";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
