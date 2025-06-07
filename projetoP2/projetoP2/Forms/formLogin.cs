@@ -43,8 +43,8 @@ namespace projetoP2
                     }
                     Form formPrincipal = new formPrincipal();
                     formPrincipal.Show();
-                    this.Hide();
                     MessageBox.Show("Login realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Hide();
                     return;
                 }
             }

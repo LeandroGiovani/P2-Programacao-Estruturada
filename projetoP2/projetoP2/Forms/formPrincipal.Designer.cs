@@ -78,12 +78,14 @@
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(38, 20);
             sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // fecharProgramaToolStripMenuItem
             // 
             fecharProgramaToolStripMenuItem.Name = "fecharProgramaToolStripMenuItem";
             fecharProgramaToolStripMenuItem.Size = new Size(109, 20);
             fecharProgramaToolStripMenuItem.Text = "Fechar Programa";
+            fecharProgramaToolStripMenuItem.Click += fecharProgramaToolStripMenuItem_Click;
             // 
             // formPrincipal
             // 

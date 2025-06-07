@@ -28,5 +28,22 @@ namespace projetoP2.Forms
             Form formCadUsuarios = new formCadUsuarios();
             formCadUsuarios.Show();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Você tem certeza que deseja sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Sessao.UsuarioLogado = "";
+                Sessao.SenhaUsuario = "";
+                Form formLogin = new formLogin();
+                formLogin.Show();
+                Close();
+            }
+        }
+
+        private void fecharProgramaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
