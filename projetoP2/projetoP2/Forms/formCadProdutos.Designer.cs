@@ -34,7 +34,7 @@
             txtDescricao = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            txtNomeDoProduto = new TextBox();
+            txtNomeProduto = new TextBox();
             label2 = new Label();
             btnEditar = new Button();
             btnExcluir = new Button();
@@ -52,6 +52,7 @@
             btnLimpar.TabIndex = 4;
             btnLimpar.Text = "Limpar Campos";
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnRegistrar
             // 
@@ -94,12 +95,12 @@
             label3.TabIndex = 38;
             label3.Text = "Preço:";
             // 
-            // txtNomeDoProduto
+            // txtNomeProduto
             // 
-            txtNomeDoProduto.Location = new Point(12, 115);
-            txtNomeDoProduto.Name = "txtNomeDoProduto";
-            txtNomeDoProduto.Size = new Size(288, 23);
-            txtNomeDoProduto.TabIndex = 0;
+            txtNomeProduto.Location = new Point(12, 115);
+            txtNomeProduto.Name = "txtNomeProduto";
+            txtNomeProduto.Size = new Size(288, 23);
+            txtNomeProduto.TabIndex = 0;
             // 
             // label2
             // 
@@ -136,6 +137,7 @@
             btnRecarregar.TabIndex = 7;
             btnRecarregar.Text = "Recarregar Tabela";
             btnRecarregar.UseVisualStyleBackColor = true;
+            btnRecarregar.Click += btnRecarregar_Click;
             // 
             // label1
             // 
@@ -167,7 +169,7 @@
             Controls.Add(txtDescricao);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(txtNomeDoProduto);
+            Controls.Add(txtNomeProduto);
             Controls.Add(label2);
             Controls.Add(btnEditar);
             Controls.Add(btnExcluir);
@@ -191,7 +193,7 @@
         private TextBox txtDescricao;
         private Label label4;
         private Label label3;
-        private TextBox txtNomeDoProduto;
+        private TextBox txtNomeProduto;
         private Label label2;
         private Button btnEditar;
         private Button btnExcluir;
