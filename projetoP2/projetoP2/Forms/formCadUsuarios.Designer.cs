@@ -78,6 +78,7 @@
             voltarToolStripMenuItem.Name = "voltarToolStripMenuItem";
             voltarToolStripMenuItem.Size = new Size(49, 20);
             voltarToolStripMenuItem.Text = "Voltar";
+            voltarToolStripMenuItem.Click += voltarToolStripMenuItem_Click;
             // 
             // lbBemVindo
             // 
@@ -90,22 +91,23 @@
             lbBemVindo.RightToLeft = RightToLeft.Yes;
             lbBemVindo.Size = new Size(300, 21);
             lbBemVindo.TabIndex = 1;
-            lbBemVindo.Text = "Olá usuarioAA";
+            lbBemVindo.Text = "Olá usuario";
             // 
             // btnAlterarSenha
             // 
-            btnAlterarSenha.Location = new Point(922, 79);
+            btnAlterarSenha.Location = new Point(896, 79);
             btnAlterarSenha.Name = "btnAlterarSenha";
-            btnAlterarSenha.Size = new Size(112, 23);
+            btnAlterarSenha.Size = new Size(138, 23);
             btnAlterarSenha.TabIndex = 2;
             btnAlterarSenha.Text = "Alterar Senha";
             btnAlterarSenha.UseVisualStyleBackColor = true;
+            btnAlterarSenha.Click += btnAlterarSenha_Click;
             // 
             // txtAlterarSenha
             // 
-            txtAlterarSenha.Location = new Point(922, 108);
+            txtAlterarSenha.Location = new Point(896, 108);
             txtAlterarSenha.Name = "txtAlterarSenha";
-            txtAlterarSenha.Size = new Size(112, 23);
+            txtAlterarSenha.Size = new Size(138, 23);
             txtAlterarSenha.TabIndex = 3;
             // 
             // txtNome

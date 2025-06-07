@@ -34,22 +34,23 @@ namespace projetoP2
                     if (nome == "ADMIN")
                     {
                         Sessao.UsuarioLogado = "ADMIN";
+                        Sessao.SenhaUsuario = senha;
                     }
                     else
                     {
                         Sessao.UsuarioLogado = nome;
+                        Sessao.SenhaUsuario = senha;
                     }
                     Form formPrincipal = new formPrincipal();
                     formPrincipal.Show();
                     this.Hide();
                     MessageBox.Show("Login realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
-                } else
-                {
-                    MessageBox.Show("Nome ou senha incorretos. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
                 }
             }
+
+            MessageBox.Show("Nome ou senha incorretos. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
         }
     }
 }

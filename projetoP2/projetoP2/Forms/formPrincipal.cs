@@ -25,16 +25,8 @@ namespace projetoP2.Forms
 
         private void cadastroDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Sessao.EhAdmin())
-            {
-                MessageBox.Show("Apenas o usuário ADMIN pode cadastrar ou excluir usuários.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else
-            {
-                Form formCadUsuarios = new formCadUsuarios();
-                formCadUsuarios.Show();
-            }
+            Form formCadUsuarios = new formCadUsuarios();
+            formCadUsuarios.Show();
         }
     }
 }

@@ -51,6 +51,7 @@ namespace projetoP2.Forms
             txtSenha.Enabled = false;
             btnSalvar.Enabled = false;
             btnLimpar.Enabled = false;
+            txtAlterarSenha.Enabled = false;
         }
 
         private void btnRecarregar_Click(object sender, EventArgs e)
@@ -94,8 +95,20 @@ namespace projetoP2.Forms
             btnLimpar.Enabled = true;
             btnSalvar.Text = "Atualizar Usuário";
 
+            if (dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString() == "ADMIN" && Sessao.UsuarioLogado != "ADMIN")
+            {
+                MessageBox.Show("Você não pode editar o usuário ADMIN.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            } else if (dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString() == Sessao.UsuarioLogado)
+            {
+                txtNome.Text = dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString();
+                txtNome.Enabled = false;
+                txtSenha.Text = dgvUsuarios.Rows[edicaoIndex].Cells[1].Value.ToString();
+            }
+
             txtNome.Text = dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString();
             txtSenha.Text = dgvUsuarios.Rows[edicaoIndex].Cells[1].Value.ToString();
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -123,6 +136,7 @@ namespace projetoP2.Forms
                         MessageBox.Show("Selecione um usuário para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+
                     CrudFuncs.CriarOuEditarRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, new string[] { txtNome.Text, txtSenha.Text }, edicaoIndex, 0);
                     DesabilitarCampos();
                     break;
@@ -149,6 +163,52 @@ namespace projetoP2.Forms
             {
                 MessageBox.Show("Apenas o usuário ADMIN pode cadastrar ou excluir usuários.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+            }
+        }
+
+        private void voltarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        {
+            if (btnAlterarSenha.Text == "Alterar Senha")
+            {
+                txtAlterarSenha.Enabled = true;
+                txtAlterarSenha.Text = Sessao.SenhaUsuario;
+                txtAlterarSenha.Focus();
+                btnAlterarSenha.Text = "Salvar Nova Senha";
+            }
+            else
+            {
+                if (string.IsNullOrWhiteSpace(txtAlterarSenha.Text))
+                {
+                    MessageBox.Show("Por favor, preencha o campo de senha.", "Campo Vazio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                foreach (DataGridViewRow row in dgvUsuarios.Rows)
+                {
+                    if (row.Cells[0].Value.ToString() == Sessao.UsuarioLogado)
+                    {
+                        if (row.Cells[1].Value.ToString() == txtAlterarSenha.Text)
+                        {
+                            MessageBox.Show("A nova senha não pode ser igual à senha atual.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        row.Cells[1].Value = txtAlterarSenha.Text;
+                        Sessao.SenhaUsuario = txtAlterarSenha.Text;
+
+                        CrudFuncs.CriarOuEditarRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, new string[] { row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString() }, row.Index, 0);
+
+                        btnAlterarSenha.Text = "Alterar Senha";
+                        txtAlterarSenha.Enabled = false;
+                        txtAlterarSenha.Text = string.Empty;
+                        break;
+                    }
+                }
             }
         }
     }
