@@ -52,6 +52,7 @@
             cadastroDeClientesToolStripMenuItem.Name = "cadastroDeClientesToolStripMenuItem";
             cadastroDeClientesToolStripMenuItem.Size = new Size(127, 20);
             cadastroDeClientesToolStripMenuItem.Text = "Cadastro de Clientes";
+            cadastroDeClientesToolStripMenuItem.Click += cadastroDeClientesToolStripMenuItem_Click;
             // 
             // cadastroDeProdutosToolStripMenuItem
             // 
@@ -70,6 +71,7 @@
             cadastroDeUsuáriosToolStripMenuItem.Name = "cadastroDeUsuáriosToolStripMenuItem";
             cadastroDeUsuáriosToolStripMenuItem.Size = new Size(130, 20);
             cadastroDeUsuáriosToolStripMenuItem.Text = "Cadastro de Usuários";
+            cadastroDeUsuáriosToolStripMenuItem.Click += cadastroDeUsuáriosToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 

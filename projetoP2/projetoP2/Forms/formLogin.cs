@@ -6,7 +6,7 @@ namespace projetoP2
 {
     public partial class formLogin : Form
     {
-        private string caminhoCsv = Path.Combine(Application.StartupPath, "..\\..\\..\\CSVs\\login.csv");
+        private string caminhoCsv = Path.Combine(Application.StartupPath, "..\\..\\..\\CSVs\\Usuarios.csv");
         private string[] cabecalhoCsv = { "Nome", "Senha" };
 
         public formLogin()

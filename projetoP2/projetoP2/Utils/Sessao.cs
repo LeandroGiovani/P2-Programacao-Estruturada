@@ -11,7 +11,7 @@ namespace projetoP2.Utils
         public static string UsuarioLogado { get; set; }
         public static string TipoUsuario => UsuarioLogado == "ADMIN" ? "Administrador" : "Comum";
 
-        public static bool Admin()
+        public static bool EhAdmin()
         {
             return UsuarioLogado == "ADMIN";
         }
