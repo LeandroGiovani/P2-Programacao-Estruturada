@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static projetoP2.Forms.formCadClientes;
 
 namespace projetoP2.Forms
 {
@@ -42,6 +43,21 @@ namespace projetoP2.Forms
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+            LimparCampos();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            edicaoIndex = -1;
+
+            CrudFuncs.CriarOuEditarRegistro(
+                dgvProdutos,
+                CsvFuncs.produtosCsv,
+                new string[] { txtNomeProduto.Text, $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}", txtDescricao.Text },
+                edicaoIndex,
+                0
+            );
+
             LimparCampos();
         }
     }

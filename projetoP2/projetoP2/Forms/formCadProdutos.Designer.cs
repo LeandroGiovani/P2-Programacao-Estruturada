@@ -46,7 +46,7 @@
             // 
             // btnLimpar
             // 
-            btnLimpar.Location = new Point(12, 314);
+            btnLimpar.Location = new Point(12, 376);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(288, 38);
             btnLimpar.TabIndex = 4;
@@ -56,12 +56,13 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(12, 270);
+            btnRegistrar.Location = new Point(12, 332);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(288, 38);
             btnRegistrar.TabIndex = 3;
             btnRegistrar.Text = "Registrar Produto";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // txtPreco
             // 
@@ -73,8 +74,9 @@
             // txtDescricao
             // 
             txtDescricao.Location = new Point(12, 220);
+            txtDescricao.Multiline = true;
             txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(288, 23);
+            txtDescricao.Size = new Size(288, 91);
             txtDescricao.TabIndex = 2;
             // 
             // label4
