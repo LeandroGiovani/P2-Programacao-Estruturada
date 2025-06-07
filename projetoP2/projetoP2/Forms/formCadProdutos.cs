@@ -80,7 +80,7 @@ namespace projetoP2.Forms
                         txtDescricao.Text
                     },
                     edicaoIndex,
-                    1
+                    0
                 );
 
                 LimparCampos();
@@ -112,6 +112,20 @@ namespace projetoP2.Forms
             txtDescricao.Text = dgvProdutos.Rows[edicaoIndex].Cells[2].Value.ToString();
 
             btnRegistrar.Text = "Atualizar Produto";
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            edicaoIndex = dgvProdutos.CurrentCell.RowIndex;
+
+            if (edicaoIndex == -1)
+            {
+                MessageBox.Show("Selecione um produto para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            CrudFuncs.ExcluirRegistro(dgvProdutos, CsvFuncs.produtosCsv, edicaoIndex);
         }
     }
 }
