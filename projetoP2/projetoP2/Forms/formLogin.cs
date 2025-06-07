@@ -6,5 +6,10 @@ namespace projetoP2
         {
             InitializeComponent();
         }
+
+        private void formLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
