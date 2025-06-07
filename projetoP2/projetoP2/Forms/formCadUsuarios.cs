@@ -13,6 +13,8 @@ namespace projetoP2.Forms
 {
     public partial class formCadUsuarios : Form
     {
+        private int edicaoIndex = -1;
+
         public formCadUsuarios()
         {
             InitializeComponent();
@@ -64,11 +66,46 @@ namespace projetoP2.Forms
 
         private void atualizarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtNome.Enabled = true;
-            txtSenha.Enabled = true;
-            btnSalvar.Enabled = true;
-            btnSalvar.Text = "Atualizar Usuário";
-            txtNome.Focus();
+
         }
+
+        private void excluirUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastrarUsuario()
+        {
+            return;
+        }
+
+        private void AtualizarUsuario()
+        {
+            return;
+        }
+
+        private void ExcluirUsuario()
+        {
+            return;
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            string btnText = btnSalvar.Text;
+
+            switch (btnText)
+            {
+                case "Cadastrar Usuário":
+                    CadastrarUsuario();
+                    break;
+                case "Atualizar Usuário":
+                    AtualizarUsuario();
+                    break;
+                case "Excluir Usuário":
+                    ExcluirUsuario();
+                    break;
+            }
+        }
+
     }
 }

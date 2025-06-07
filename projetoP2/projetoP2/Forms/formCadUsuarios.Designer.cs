@@ -77,6 +77,7 @@
             excluirUsuárioToolStripMenuItem.Name = "excluirUsuárioToolStripMenuItem";
             excluirUsuárioToolStripMenuItem.Size = new Size(96, 20);
             excluirUsuárioToolStripMenuItem.Text = "Excluir Usuário";
+            excluirUsuárioToolStripMenuItem.Click += excluirUsuárioToolStripMenuItem_Click;
             // 
             // voltarToolStripMenuItem
             // 
@@ -153,6 +154,7 @@
             btnSalvar.TabIndex = 8;
             btnSalvar.Text = "Cadastrar";
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // dgvUsuarios
             // 
