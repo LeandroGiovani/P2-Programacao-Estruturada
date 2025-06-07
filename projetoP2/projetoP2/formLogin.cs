@@ -1,8 +1,8 @@
 namespace projetoP2
 {
-    public partial class Form1 : Form
+    public partial class formLogin : Form
     {
-        public Form1()
+        public formLogin()
         {
             InitializeComponent();
         }
