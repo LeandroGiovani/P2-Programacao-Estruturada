@@ -38,7 +38,7 @@ namespace projetoP2
                     }
                     else
                     {
-                        Sessao.UsuarioLogado = "COMUM";
+                        Sessao.UsuarioLogado = nome;
                     }
                     Form formPrincipal = new formPrincipal();
                     formPrincipal.Show();

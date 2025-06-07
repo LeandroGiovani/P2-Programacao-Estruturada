@@ -9,7 +9,7 @@ namespace projetoP2.Utils
     public static class Sessao
     {
         public static string UsuarioLogado { get; set; }
-        public static string TipoUsuario => UsuarioLogado == "ADMIN" ? "Administrador" : "Comum";
+        public static string TipoUsuario => UsuarioLogado == "ADMIN" ? "ADMIN" : "COMUM";
 
         public static bool EhAdmin()
         {
