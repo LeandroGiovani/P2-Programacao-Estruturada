@@ -40,7 +40,7 @@
             btnEntrar.Location = new Point(106, 246);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(278, 41);
-            btnEntrar.TabIndex = 0;
+            btnEntrar.TabIndex = 2;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
             btnEntrar.Click += btnEntrar_Click;
@@ -50,7 +50,7 @@
             txtNome.Location = new Point(106, 126);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(278, 23);
-            txtNome.TabIndex = 1;
+            txtNome.TabIndex = 0;
             // 
             // label1
             // 
@@ -75,7 +75,7 @@
             txtSenha.Location = new Point(106, 191);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(278, 23);
-            txtSenha.TabIndex = 3;
+            txtSenha.TabIndex = 1;
             // 
             // formLogin
             // 

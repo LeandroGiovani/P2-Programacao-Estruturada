@@ -32,6 +32,16 @@ namespace projetoP2.Forms
             txtSenha.Clear();
         }
 
+        private void DesabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtSenha.Enabled = false;
+            btnSalvar.Enabled = false;
+            edicaoIndex = -1;
+            btnSalvar.Text = "Cadastrar Usuário";
+            LimparCampos();
+        }
+
         private void formCadUsuarios_Load(object sender, EventArgs e)
         {
             AtualizarDataGrid();
@@ -76,7 +86,32 @@ namespace projetoP2.Forms
 
         private void CadastrarUsuario()
         {
-            return;
+            string nome = txtNome.Text.Trim();
+            string senha = txtSenha.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtSenha.Text))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos.", "Campos Vazios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var linhas = File.ReadAllLines(CsvFuncs.usuariosCsv).ToList();
+
+            if (edicaoIndex == -1)
+            {
+                if (linhas.Skip(1).Any(l => l.Split(',')[0] == nome))
+                {
+                    MessageBox.Show("Usuário já cadastrado com este nome", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                linhas.Add($"{nome},{senha}");
+            }
+
+            File.WriteAllLines(CsvFuncs.usuariosCsv, linhas);
+            AtualizarDataGrid();
+            DesabilitarCampos();
+            MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AtualizarUsuario()
