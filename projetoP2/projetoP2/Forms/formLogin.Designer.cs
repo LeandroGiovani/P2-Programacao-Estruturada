@@ -88,7 +88,8 @@
             Controls.Add(txtNome);
             Controls.Add(btnEntrar);
             Name = "formLogin";
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }
