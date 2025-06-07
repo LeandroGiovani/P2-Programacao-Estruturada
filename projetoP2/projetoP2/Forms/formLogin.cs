@@ -1,3 +1,4 @@
+using projetoP2.Forms;
 using projetoP2.Utils;
 using System.Data;
 
@@ -32,7 +33,9 @@ namespace projetoP2
                 if (row["Nome"].ToString() == nome && row["Senha"].ToString() == senha)
                 {
                     MessageBox.Show("Login realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    Form formPrincipal = new formPrincipal();
+                    formPrincipal.Show();
+                    this.Hide();
                 } else
                 {
                     MessageBox.Show("Nome ou senha incorretos. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
