@@ -12,7 +12,7 @@ namespace projetoP2
         public formLogin()
         {
             InitializeComponent();
-            csvFuncs.InicializarCsv(caminhoCsv, cabecalhoCsv);
+            CsvFuncs.InicializarCsv(caminhoCsv, cabecalhoCsv);
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -26,16 +26,24 @@ namespace projetoP2
                 return;
             }
 
-            DataTable tabelaLogin = csvFuncs.CarregarCsv(caminhoCsv);
+            DataTable tabelaLogin = CsvFuncs.CarregarCsv(caminhoCsv);
 
             foreach (DataRow row in tabelaLogin.Rows)
             {
                 if (row["Nome"].ToString() == nome && row["Senha"].ToString() == senha)
                 {
-                    MessageBox.Show("Login realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (nome == "ADMIN")
+                    {
+                        Sessao.UsuarioLogado = "ADMIN";
+                    }
+                    else
+                    {
+                        Sessao.UsuarioLogado = "COMUM";
+                    }
                     Form formPrincipal = new formPrincipal();
                     formPrincipal.Show();
                     this.Hide();
+                    MessageBox.Show("Login realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } else
                 {
                     MessageBox.Show("Nome ou senha incorretos. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
