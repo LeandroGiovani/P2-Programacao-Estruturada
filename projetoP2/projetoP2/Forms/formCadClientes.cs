@@ -122,7 +122,8 @@ namespace projetoP2.Forms
                 );
 
                 LimparCampos();
-            } else
+            }
+            else
             {
                 if (edicaoIndex == -1)
                 {
@@ -191,5 +192,19 @@ namespace projetoP2.Forms
 
             btnRegistrar.Text = "Atualizar Cliente";
         }
-    }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            edicaoIndex = dgvClientes.CurrentCell.RowIndex;
+
+            if (edicaoIndex == -1)
+            {
+                MessageBox.Show("Selecione um cliente para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            CrudFuncs.ExcluirRegistro(dgvClientes, CsvFuncs.clientesCsv, edicaoIndex);
+        }
+    }   
 }

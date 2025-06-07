@@ -98,6 +98,7 @@
             btnExcluir.TabIndex = 15;
             btnExcluir.Text = "Excluir Cliente";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnEditar
             // 
