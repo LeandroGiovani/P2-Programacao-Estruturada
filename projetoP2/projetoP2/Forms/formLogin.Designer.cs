@@ -43,6 +43,7 @@
             btnEntrar.TabIndex = 0;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // txtNome
             // 
@@ -88,7 +89,6 @@
             Controls.Add(btnEntrar);
             Name = "formLogin";
             Text = "Form1";
-            Load += formLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

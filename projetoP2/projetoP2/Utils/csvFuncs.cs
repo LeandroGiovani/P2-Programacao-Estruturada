@@ -9,7 +9,7 @@ namespace projetoP2.Utils
 {
     public static class csvFuncs
     {
-        public static void InicializarCsv(string caminhoCsv, string cabecalho)
+        public static void InicializarCsv(string caminhoCsv, string[] cabecalho)
         {
             if (!File.Exists(caminhoCsv))
             {
