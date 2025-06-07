@@ -19,11 +19,12 @@ namespace projetoP2.Forms
         public formCadProdutos()
         {
             InitializeComponent();
-            CsvFuncs.InicializarCsv(CsvFuncs.produtosCsv, new string[] { "Nome do Produto", "Preço", "Descrição" });
+            CsvFuncs.InicializarCsv(CsvFuncs.produtosCsv, new string[] { "Código Identificador", "Nome do Produto", "Preço", "Descrição" });
         }
 
         private void LimparCampos()
         {
+            txtId.Clear();
             txtNomeProduto.Clear();
             txtPreco.Clear();
             txtDescricao.Clear();
@@ -55,7 +56,7 @@ namespace projetoP2.Forms
                 CrudFuncs.CriarOuEditarRegistro(
                     dgvProdutos,
                     CsvFuncs.produtosCsv,
-                    new string[] { txtNomeProduto.Text, $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}", txtDescricao.Text },
+                    new string[] { txtId.Text, txtNomeProduto.Text, $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}", txtDescricao.Text },
                     edicaoIndex,
                     0
                 );
@@ -73,12 +74,7 @@ namespace projetoP2.Forms
                 CrudFuncs.CriarOuEditarRegistro(
                     dgvProdutos,
                     CsvFuncs.produtosCsv,
-                    new string[]
-                    {
-                        txtNomeProduto.Text,
-                        $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}",
-                        txtDescricao.Text
-                    },
+                    new string[] { txtId.Text, txtNomeProduto.Text, $"R$ {txtPreco.Text.Trim().Replace("R$", "").Replace(" ", "").Replace(",", ".")}", txtDescricao.Text },
                     edicaoIndex,
                     0
                 );
@@ -99,7 +95,7 @@ namespace projetoP2.Forms
                 return;
             }
 
-            var valorProduto = dgvProdutos.Rows[edicaoIndex].Cells[1].Value.ToString();
+            var valorProduto = dgvProdutos.Rows[edicaoIndex].Cells[2].Value.ToString();
 
             if (valorProduto == null)
             {
@@ -107,9 +103,10 @@ namespace projetoP2.Forms
                 return;
             }
 
-            txtNomeProduto.Text = dgvProdutos.Rows[edicaoIndex].Cells[0].Value.ToString();
+            txtId.Text = dgvProdutos.Rows[edicaoIndex].Cells[0].Value.ToString();
+            txtNomeProduto.Text = dgvProdutos.Rows[edicaoIndex].Cells[1].Value.ToString();
             txtPreco.Text = valorProduto.Replace("R$", "").Replace(" ", "");
-            txtDescricao.Text = dgvProdutos.Rows[edicaoIndex].Cells[2].Value.ToString();
+            txtDescricao.Text = dgvProdutos.Rows[edicaoIndex].Cells[3].Value.ToString();
 
             btnRegistrar.Text = "Atualizar Produto";
         }

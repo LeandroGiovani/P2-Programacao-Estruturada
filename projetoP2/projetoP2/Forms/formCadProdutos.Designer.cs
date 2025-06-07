@@ -41,12 +41,14 @@
             btnRecarregar = new Button();
             label1 = new Label();
             dgvProdutos = new DataGridView();
+            txtId = new TextBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
             // 
             // btnLimpar
             // 
-            btnLimpar.Location = new Point(12, 376);
+            btnLimpar.Location = new Point(12, 417);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(288, 38);
             btnLimpar.TabIndex = 4;
@@ -56,7 +58,7 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(12, 332);
+            btnRegistrar.Location = new Point(12, 373);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(288, 38);
             btnRegistrar.TabIndex = 3;
@@ -66,14 +68,14 @@
             // 
             // txtPreco
             // 
-            txtPreco.Location = new Point(12, 166);
+            txtPreco.Location = new Point(12, 202);
             txtPreco.Name = "txtPreco";
             txtPreco.Size = new Size(288, 23);
             txtPreco.TabIndex = 1;
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new Point(12, 220);
+            txtDescricao.Location = new Point(12, 261);
             txtDescricao.Multiline = true;
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(288, 91);
@@ -82,7 +84,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 202);
+            label4.Location = new Point(12, 243);
             label4.Name = "label4";
             label4.Size = new Size(61, 15);
             label4.TabIndex = 41;
@@ -91,7 +93,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 148);
+            label3.Location = new Point(12, 184);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
             label3.TabIndex = 38;
@@ -99,7 +101,7 @@
             // 
             // txtNomeProduto
             // 
-            txtNomeProduto.Location = new Point(12, 115);
+            txtNomeProduto.Location = new Point(12, 151);
             txtNomeProduto.Name = "txtNomeProduto";
             txtNomeProduto.Size = new Size(288, 23);
             txtNomeProduto.TabIndex = 0;
@@ -107,7 +109,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 97);
+            label2.Location = new Point(12, 133);
             label2.Name = "label2";
             label2.Size = new Size(106, 15);
             label2.TabIndex = 34;
@@ -162,11 +164,29 @@
             dgvProdutos.TabIndex = 27;
             dgvProdutos.TabStop = false;
             // 
+            // txtId
+            // 
+            txtId.Location = new Point(12, 99);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(288, 23);
+            txtId.TabIndex = 42;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 81);
+            label5.Name = "label5";
+            label5.Size = new Size(77, 15);
+            label5.TabIndex = 43;
+            label5.Text = "Identificador:";
+            // 
             // formCadProdutos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 661);
+            Controls.Add(txtId);
+            Controls.Add(label5);
             Controls.Add(btnLimpar);
             Controls.Add(btnRegistrar);
             Controls.Add(txtPreco);
@@ -204,5 +224,7 @@
         private Button btnRecarregar;
         private Label label1;
         private DataGridView dgvProdutos;
+        private TextBox txtId;
+        private Label label5;
     }
 }
