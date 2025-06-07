@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             menuStrip1 = new MenuStrip();
             cadastrarUsuárioToolStripMenuItem = new ToolStripMenuItem();
             atualizarUsuárioToolStripMenuItem = new ToolStripMenuItem();
             excluirUsuárioToolStripMenuItem = new ToolStripMenuItem();
             voltarToolStripMenuItem = new ToolStripMenuItem();
             lbBemVindo = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
+            btnAlterarSenha = new Button();
+            txtAlterarSenha = new TextBox();
             txtNome = new TextBox();
             label1 = new Label();
             label2 = new Label();
             txtSenha = new TextBox();
             btnSalvar = new Button();
-            dataGridView1 = new DataGridView();
+            dgvUsuarios = new DataGridView();
             label3 = new Label();
-            button2 = new Button();
+            btnRecarregar = new Button();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -62,12 +63,14 @@
             cadastrarUsuárioToolStripMenuItem.Name = "cadastrarUsuárioToolStripMenuItem";
             cadastrarUsuárioToolStripMenuItem.Size = new Size(112, 20);
             cadastrarUsuárioToolStripMenuItem.Text = "Cadastrar Usuário";
+            cadastrarUsuárioToolStripMenuItem.Click += cadastrarUsuárioToolStripMenuItem_Click;
             // 
             // atualizarUsuárioToolStripMenuItem
             // 
             atualizarUsuárioToolStripMenuItem.Name = "atualizarUsuárioToolStripMenuItem";
             atualizarUsuárioToolStripMenuItem.Size = new Size(108, 20);
             atualizarUsuárioToolStripMenuItem.Text = "Atualizar Usuário";
+            atualizarUsuárioToolStripMenuItem.Click += atualizarUsuárioToolStripMenuItem_Click;
             // 
             // excluirUsuárioToolStripMenuItem
             // 
@@ -85,28 +88,30 @@
             // 
             lbBemVindo.AutoSize = true;
             lbBemVindo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbBemVindo.Location = new Point(944, 42);
+            lbBemVindo.Location = new Point(734, 42);
+            lbBemVindo.MaximumSize = new Size(300, 0);
+            lbBemVindo.MinimumSize = new Size(300, 0);
             lbBemVindo.Name = "lbBemVindo";
             lbBemVindo.RightToLeft = RightToLeft.Yes;
-            lbBemVindo.Size = new Size(90, 21);
+            lbBemVindo.Size = new Size(300, 21);
             lbBemVindo.TabIndex = 1;
-            lbBemVindo.Text = "Olá usuario";
+            lbBemVindo.Text = "Olá usuarioAA";
             // 
-            // button1
+            // btnAlterarSenha
             // 
-            button1.Location = new Point(922, 79);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Alterar Senha";
-            button1.UseVisualStyleBackColor = true;
+            btnAlterarSenha.Location = new Point(922, 79);
+            btnAlterarSenha.Name = "btnAlterarSenha";
+            btnAlterarSenha.Size = new Size(112, 23);
+            btnAlterarSenha.TabIndex = 2;
+            btnAlterarSenha.Text = "Alterar Senha";
+            btnAlterarSenha.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtAlterarSenha
             // 
-            textBox1.Location = new Point(922, 108);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(112, 23);
-            textBox1.TabIndex = 3;
+            txtAlterarSenha.Location = new Point(922, 108);
+            txtAlterarSenha.Name = "txtAlterarSenha";
+            txtAlterarSenha.Size = new Size(112, 23);
+            txtAlterarSenha.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -149,13 +154,15 @@
             btnSalvar.Text = "Cadastrar";
             btnSalvar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 250);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1022, 363);
-            dataGridView1.TabIndex = 9;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Location = new Point(12, 250);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.Size = new Size(1022, 363);
+            dgvUsuarios.TabIndex = 9;
             // 
             // label3
             // 
@@ -167,39 +174,41 @@
             label3.TabIndex = 10;
             label3.Text = "Tabela de Usuários";
             // 
-            // button2
+            // btnRecarregar
             // 
-            button2.Location = new Point(906, 217);
-            button2.Name = "button2";
-            button2.Size = new Size(128, 27);
-            button2.TabIndex = 11;
-            button2.Text = "Recarregar Tabela";
-            button2.UseVisualStyleBackColor = true;
+            btnRecarregar.Location = new Point(906, 217);
+            btnRecarregar.Name = "btnRecarregar";
+            btnRecarregar.Size = new Size(128, 27);
+            btnRecarregar.TabIndex = 11;
+            btnRecarregar.Text = "Recarregar Tabela";
+            btnRecarregar.UseVisualStyleBackColor = true;
+            btnRecarregar.Click += btnRecarregar_Click;
             // 
             // formCadUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1046, 625);
-            Controls.Add(button2);
+            Controls.Add(btnRecarregar);
             Controls.Add(label3);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvUsuarios);
             Controls.Add(btnSalvar);
             Controls.Add(label2);
             Controls.Add(txtSenha);
             Controls.Add(label1);
             Controls.Add(txtNome);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(txtAlterarSenha);
+            Controls.Add(btnAlterarSenha);
             Controls.Add(lbBemVindo);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "formCadUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formulário de Cadastro de Usuários";
+            Load += formCadUsuarios_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -212,15 +221,15 @@
         private ToolStripMenuItem excluirUsuárioToolStripMenuItem;
         private ToolStripMenuItem voltarToolStripMenuItem;
         private Label lbBemVindo;
-        private Button button1;
-        private TextBox textBox1;
+        private Button btnAlterarSenha;
+        private TextBox txtAlterarSenha;
         private TextBox txtNome;
         private Label label1;
         private Label label2;
         private TextBox txtSenha;
         private Button btnSalvar;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsuarios;
         private Label label3;
-        private Button button2;
+        private Button btnRecarregar;
     }
 }

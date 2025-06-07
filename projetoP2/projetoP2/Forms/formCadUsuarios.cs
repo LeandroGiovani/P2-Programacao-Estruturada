@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projetoP2.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,64 @@ using System.Windows.Forms;
 
 namespace projetoP2.Forms
 {
-    public partial class formCadUsuarios: Form
+    public partial class formCadUsuarios : Form
     {
         public formCadUsuarios()
         {
             InitializeComponent();
+        }
+
+        private void AtualizarDataGrid()
+        {
+            DataTable usuarios = CsvFuncs.CarregarCsv(CsvFuncs.usuariosCsv);
+            dgvUsuarios.DataSource = usuarios;
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtSenha.Clear();
+        }
+
+        private void formCadUsuarios_Load(object sender, EventArgs e)
+        {
+            AtualizarDataGrid();
+
+            lbBemVindo.Text = $"Bem-vindo, {Sessao.UsuarioLogado}";
+            txtNome.Enabled = false;
+            txtSenha.Enabled = false;
+            btnSalvar.Enabled = false;
+        }
+
+        private void btnRecarregar_Click(object sender, EventArgs e)
+        {
+            AtualizarDataGrid();
+        }
+
+        private void cadastrarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Sessao.EhAdmin())
+            {
+                MessageBox.Show("Apenas o usuário ADMIN pode cadastrar ou excluir usuários.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                txtNome.Enabled = true;
+                txtSenha.Enabled = true;
+                btnSalvar.Enabled = true;
+                btnSalvar.Text = "Cadastrar Usuário";
+                txtNome.Focus();
+            }
+        }
+
+        private void atualizarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtNome.Enabled = true;
+            txtSenha.Enabled = true;
+            btnSalvar.Enabled = true;
+            btnSalvar.Text = "Atualizar Usuário";
+            txtNome.Focus();
         }
     }
 }

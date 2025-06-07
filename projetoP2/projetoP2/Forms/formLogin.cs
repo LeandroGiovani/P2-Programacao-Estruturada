@@ -6,13 +6,12 @@ namespace projetoP2
 {
     public partial class formLogin : Form
     {
-        private string caminhoCsv = Path.Combine(Application.StartupPath, "..\\..\\..\\CSVs\\Usuarios.csv");
         private string[] cabecalhoCsv = { "Nome", "Senha" };
 
         public formLogin()
         {
             InitializeComponent();
-            CsvFuncs.InicializarCsv(caminhoCsv, cabecalhoCsv);
+            CsvFuncs.InicializarCsv(CsvFuncs.usuariosCsv, cabecalhoCsv);
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -26,7 +25,7 @@ namespace projetoP2
                 return;
             }
 
-            DataTable tabelaLogin = CsvFuncs.CarregarCsv(caminhoCsv);
+            DataTable tabelaLogin = CsvFuncs.CarregarCsv(CsvFuncs.usuariosCsv);
 
             foreach (DataRow row in tabelaLogin.Rows)
             {
