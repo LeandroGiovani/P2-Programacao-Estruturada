@@ -20,12 +20,6 @@ namespace projetoP2.Forms
             InitializeComponent();
         }
 
-        private void AtualizarDataGrid()
-        {
-            DataTable usuarios = CsvFuncs.CarregarCsv(CsvFuncs.usuariosCsv);
-            dgvUsuarios.DataSource = usuarios;
-        }
-
         private void LimparCampos()
         {
             txtNome.Clear();
@@ -37,24 +31,31 @@ namespace projetoP2.Forms
             txtNome.Enabled = false;
             txtSenha.Enabled = false;
             btnSalvar.Enabled = false;
+            btnLimpar.Enabled = false;
             edicaoIndex = -1;
             btnSalvar.Text = "Cadastrar Usuário";
             LimparCampos();
         }
 
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
         private void formCadUsuarios_Load(object sender, EventArgs e)
         {
-            AtualizarDataGrid();
+            CrudFuncs.AtualizarDataGrid(dgvUsuarios, CsvFuncs.usuariosCsv);
 
             lbBemVindo.Text = $"Bem-vindo, {Sessao.UsuarioLogado}";
             txtNome.Enabled = false;
             txtSenha.Enabled = false;
             btnSalvar.Enabled = false;
+            btnLimpar.Enabled = false;
         }
 
         private void btnRecarregar_Click(object sender, EventArgs e)
         {
-            AtualizarDataGrid();
+            CrudFuncs.AtualizarDataGrid(dgvUsuarios, CsvFuncs.usuariosCsv);
         }
 
         private void cadastrarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,9 +67,11 @@ namespace projetoP2.Forms
             }
             else
             {
+                DesabilitarCampos();
                 txtNome.Enabled = true;
                 txtSenha.Enabled = true;
                 btnSalvar.Enabled = true;
+                btnLimpar.Enabled = true;
                 btnSalvar.Text = "Cadastrar Usuário";
                 txtNome.Focus();
             }
@@ -76,47 +79,23 @@ namespace projetoP2.Forms
 
         private void atualizarUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void excluirUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CadastrarUsuario()
-        {
-            string nome = txtNome.Text.Trim();
-            string senha = txtSenha.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtSenha.Text))
-            {
-                MessageBox.Show("Por favor, preencha todos os campos.", "Campos Vazios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var linhas = File.ReadAllLines(CsvFuncs.usuariosCsv).ToList();
+            DesabilitarCampos();
+            edicaoIndex = dgvUsuarios.CurrentCell.RowIndex;
 
             if (edicaoIndex == -1)
             {
-                if (linhas.Skip(1).Any(l => l.Split(',')[0] == nome))
-                {
-                    MessageBox.Show("Usuário já cadastrado com este nome", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                linhas.Add($"{nome},{senha}");
+                MessageBox.Show("Selecione um usuário para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-            File.WriteAllLines(CsvFuncs.usuariosCsv, linhas);
-            AtualizarDataGrid();
-            DesabilitarCampos();
-            MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            txtNome.Enabled = true;
+            txtSenha.Enabled = true;
+            btnSalvar.Enabled = true;
+            btnLimpar.Enabled = true;
+            btnSalvar.Text = "Atualizar Usuário";
 
-        private void AtualizarUsuario()
-        {
-            return;
+            txtNome.Text = dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString();
+            txtSenha.Text = dgvUsuarios.Rows[edicaoIndex].Cells[1].Value.ToString();
         }
 
         private void ExcluirUsuario()
@@ -131,10 +110,17 @@ namespace projetoP2.Forms
             switch (btnText)
             {
                 case "Cadastrar Usuário":
-                    CadastrarUsuario();
+                    CrudFuncs.CriarOuEditarRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, new string[] { txtNome.Text, txtSenha.Text }, edicaoIndex, 0);
+                    DesabilitarCampos();
                     break;
                 case "Atualizar Usuário":
-                    AtualizarUsuario();
+                    if (edicaoIndex == -1)
+                    {
+                        MessageBox.Show("Selecione um usuário para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    CrudFuncs.CriarOuEditarRegistro(dgvUsuarios, CsvFuncs.usuariosCsv, new string[] { txtNome.Text, txtSenha.Text }, edicaoIndex, 0);
+                    DesabilitarCampos();
                     break;
                 case "Excluir Usuário":
                     ExcluirUsuario();

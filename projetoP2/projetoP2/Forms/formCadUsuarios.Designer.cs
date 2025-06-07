@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             menuStrip1 = new MenuStrip();
             cadastrarUsuárioToolStripMenuItem = new ToolStripMenuItem();
             atualizarUsuárioToolStripMenuItem = new ToolStripMenuItem();
-            excluirUsuárioToolStripMenuItem = new ToolStripMenuItem();
             voltarToolStripMenuItem = new ToolStripMenuItem();
             lbBemVindo = new Label();
             btnAlterarSenha = new Button();
@@ -45,13 +44,15 @@
             dgvUsuarios = new DataGridView();
             label3 = new Label();
             btnRecarregar = new Button();
+            btnExcluir = new Button();
+            btnLimpar = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrarUsuárioToolStripMenuItem, atualizarUsuárioToolStripMenuItem, excluirUsuárioToolStripMenuItem, voltarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrarUsuárioToolStripMenuItem, atualizarUsuárioToolStripMenuItem, voltarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1046, 24);
@@ -71,13 +72,6 @@
             atualizarUsuárioToolStripMenuItem.Size = new Size(108, 20);
             atualizarUsuárioToolStripMenuItem.Text = "Atualizar Usuário";
             atualizarUsuárioToolStripMenuItem.Click += atualizarUsuárioToolStripMenuItem_Click;
-            // 
-            // excluirUsuárioToolStripMenuItem
-            // 
-            excluirUsuárioToolStripMenuItem.Name = "excluirUsuárioToolStripMenuItem";
-            excluirUsuárioToolStripMenuItem.Size = new Size(96, 20);
-            excluirUsuárioToolStripMenuItem.Text = "Excluir Usuário";
-            excluirUsuárioToolStripMenuItem.Click += excluirUsuárioToolStripMenuItem_Click;
             // 
             // voltarToolStripMenuItem
             // 
@@ -118,7 +112,7 @@
             // 
             txtNome.Location = new Point(12, 66);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(170, 23);
+            txtNome.Size = new Size(326, 23);
             txtNome.TabIndex = 4;
             // 
             // label1
@@ -143,23 +137,23 @@
             // 
             txtSenha.Location = new Point(12, 121);
             txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(170, 23);
+            txtSenha.Size = new Size(326, 23);
             txtSenha.TabIndex = 6;
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(12, 163);
+            btnSalvar.Location = new Point(178, 163);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(170, 31);
+            btnSalvar.Size = new Size(160, 31);
             btnSalvar.TabIndex = 8;
-            btnSalvar.Text = "Cadastrar";
+            btnSalvar.Text = "Cadastrar Usuário";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // dgvUsuarios
             // 
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Location = new Point(12, 250);
             dgvUsuarios.Name = "dgvUsuarios";
@@ -186,11 +180,32 @@
             btnRecarregar.UseVisualStyleBackColor = true;
             btnRecarregar.Click += btnRecarregar_Click;
             // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(772, 217);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(128, 27);
+            btnExcluir.TabIndex = 12;
+            btnExcluir.Text = "Excluir Usuário";
+            btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpar
+            // 
+            btnLimpar.Location = new Point(12, 163);
+            btnLimpar.Name = "btnLimpar";
+            btnLimpar.Size = new Size(160, 31);
+            btnLimpar.TabIndex = 13;
+            btnLimpar.Text = "Limpar Campos";
+            btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
+            // 
             // formCadUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1046, 625);
+            Controls.Add(btnLimpar);
+            Controls.Add(btnExcluir);
             Controls.Add(btnRecarregar);
             Controls.Add(label3);
             Controls.Add(dgvUsuarios);
@@ -220,7 +235,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastrarUsuárioToolStripMenuItem;
         private ToolStripMenuItem atualizarUsuárioToolStripMenuItem;
-        private ToolStripMenuItem excluirUsuárioToolStripMenuItem;
         private ToolStripMenuItem voltarToolStripMenuItem;
         private Label lbBemVindo;
         private Button btnAlterarSenha;
@@ -233,5 +247,7 @@
         private DataGridView dgvUsuarios;
         private Label label3;
         private Button btnRecarregar;
+        private Button btnExcluir;
+        private Button btnLimpar;
     }
 }

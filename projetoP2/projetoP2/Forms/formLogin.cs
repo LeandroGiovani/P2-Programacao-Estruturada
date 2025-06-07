@@ -43,6 +43,7 @@ namespace projetoP2
                     formPrincipal.Show();
                     this.Hide();
                     MessageBox.Show("Login realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 } else
                 {
                     MessageBox.Show("Nome ou senha incorretos. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
