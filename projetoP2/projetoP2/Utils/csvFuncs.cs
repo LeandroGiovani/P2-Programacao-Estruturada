@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace projetoP2.Utils
 {
-    public static class csvFuncs
+    public static class CsvFuncs
     {
         public static void InicializarCsv(string caminhoCsv, string[] cabecalho)
         {
