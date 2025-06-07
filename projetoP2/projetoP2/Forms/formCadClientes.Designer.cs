@@ -35,12 +35,10 @@
             btnEditar = new Button();
             label2 = new Label();
             txtNome = new TextBox();
-            txtCpf = new TextBox();
             label3 = new Label();
             txtEmail = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            txtCep = new TextBox();
             label6 = new Label();
             txtLogradouro = new TextBox();
             label7 = new Label();
@@ -59,6 +57,8 @@
             btnRegistrar = new Button();
             btnLimpar = new Button();
             btnConsultarCep = new Button();
+            txtCpf = new MaskedTextBox();
+            txtCep = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             dgvClientes.Name = "dgvClientes";
             dgvClientes.Size = new Size(842, 550);
             dgvClientes.TabIndex = 0;
+            dgvClientes.TabStop = false;
             // 
             // label1
             // 
@@ -123,13 +124,6 @@
             txtNome.Size = new Size(288, 23);
             txtNome.TabIndex = 0;
             // 
-            // txtCpf
-            // 
-            txtCpf.Location = new Point(12, 144);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(288, 23);
-            txtCpf.TabIndex = 1;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -163,13 +157,6 @@
             label5.Size = new Size(59, 15);
             label5.TabIndex = 11;
             label5.Text = "Endereço:";
-            // 
-            // txtCep
-            // 
-            txtCep.Location = new Point(110, 264);
-            txtCep.Name = "txtCep";
-            txtCep.Size = new Size(110, 23);
-            txtCep.TabIndex = 3;
             // 
             // label6
             // 
@@ -300,6 +287,7 @@
             btnRegistrar.TabIndex = 12;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnLimpar
             // 
@@ -309,6 +297,7 @@
             btnLimpar.TabIndex = 13;
             btnLimpar.Text = "Limpar Campos";
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnConsultarCep
             // 
@@ -320,11 +309,29 @@
             btnConsultarCep.UseVisualStyleBackColor = true;
             btnConsultarCep.Click += btnConsultarCep_Click;
             // 
+            // txtCpf
+            // 
+            txtCpf.Location = new Point(12, 144);
+            txtCpf.Mask = "999.999.999-99";
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(288, 23);
+            txtCpf.TabIndex = 1;
+            // 
+            // txtCep
+            // 
+            txtCep.Location = new Point(110, 264);
+            txtCep.Mask = "99.999-999";
+            txtCep.Name = "txtCep";
+            txtCep.Size = new Size(110, 23);
+            txtCep.TabIndex = 3;
+            // 
             // formCadClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 661);
+            Controls.Add(txtCep);
+            Controls.Add(txtCpf);
             Controls.Add(btnConsultarCep);
             Controls.Add(btnLimpar);
             Controls.Add(btnRegistrar);
@@ -342,12 +349,10 @@
             Controls.Add(label8);
             Controls.Add(txtLogradouro);
             Controls.Add(label7);
-            Controls.Add(txtCep);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(txtEmail);
             Controls.Add(label4);
-            Controls.Add(txtCpf);
             Controls.Add(label3);
             Controls.Add(txtNome);
             Controls.Add(label2);
@@ -374,12 +379,10 @@
         private Button btnEditar;
         private Label label2;
         private TextBox txtNome;
-        private TextBox txtCpf;
         private Label label3;
         private TextBox txtEmail;
         private Label label4;
         private Label label5;
-        private TextBox txtCep;
         private Label label6;
         private TextBox txtLogradouro;
         private Label label7;
@@ -398,5 +401,7 @@
         private Button btnRegistrar;
         private Button btnLimpar;
         private Button btnConsultarCep;
+        private MaskedTextBox txtCpf;
+        private MaskedTextBox txtCep;
     }
 }
