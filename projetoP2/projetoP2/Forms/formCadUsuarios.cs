@@ -97,9 +97,10 @@ namespace projetoP2.Forms
 
             if (dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString() == "ADMIN" && Sessao.UsuarioLogado != "ADMIN")
             {
+                DesabilitarCampos();
                 MessageBox.Show("Você não pode editar o usuário ADMIN.", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            } else if (dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString() == Sessao.UsuarioLogado)
+            } else if (dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString() == "ADMIN" && Sessao.UsuarioLogado == "ADMIN")
             {
                 txtNome.Text = dgvUsuarios.Rows[edicaoIndex].Cells[0].Value.ToString();
                 txtNome.Enabled = false;
