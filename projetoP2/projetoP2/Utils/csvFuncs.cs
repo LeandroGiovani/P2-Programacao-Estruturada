@@ -10,7 +10,7 @@ namespace projetoP2.Utils
     public static class CsvFuncs
     {
         public static string usuariosCsv = Path.Combine(Application.StartupPath, "..\\..\\..\\CSVs\\Usuarios.csv");
-
+        public static string clientesCsv = Path.Combine(Application.StartupPath, "..\\..\\..\\CSVs\\Clientes.csv");
 
         public static void InicializarCsv(string caminhoCsv, string[] cabecalho)
         {

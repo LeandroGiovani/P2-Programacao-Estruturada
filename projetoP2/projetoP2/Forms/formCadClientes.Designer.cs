@@ -58,6 +58,7 @@
             label13 = new Label();
             btnRegistrar = new Button();
             btnLimpar = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             btnRecarregar.Location = new Point(1042, 68);
             btnRecarregar.Name = "btnRecarregar";
             btnRecarregar.Size = new Size(130, 25);
-            btnRecarregar.TabIndex = 2;
+            btnRecarregar.TabIndex = 16;
             btnRecarregar.Text = "Recarregar Tabela";
             btnRecarregar.UseVisualStyleBackColor = true;
             // 
@@ -93,7 +94,7 @@
             btnExcluir.Location = new Point(906, 68);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(130, 25);
-            btnExcluir.TabIndex = 3;
+            btnExcluir.TabIndex = 15;
             btnExcluir.Text = "Excluir Cliente";
             btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -102,7 +103,7 @@
             btnEditar.Location = new Point(770, 68);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(130, 25);
-            btnEditar.TabIndex = 4;
+            btnEditar.TabIndex = 14;
             btnEditar.Text = "Editar Cliente";
             btnEditar.UseVisualStyleBackColor = true;
             // 
@@ -119,15 +120,15 @@
             // 
             txtNome.Location = new Point(12, 93);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(278, 23);
-            txtNome.TabIndex = 6;
+            txtNome.Size = new Size(288, 23);
+            txtNome.TabIndex = 0;
             // 
             // txtCpf
             // 
             txtCpf.Location = new Point(12, 144);
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(278, 23);
-            txtCpf.TabIndex = 8;
+            txtCpf.Size = new Size(288, 23);
+            txtCpf.TabIndex = 1;
             // 
             // label3
             // 
@@ -142,8 +143,8 @@
             // 
             txtEmail.Location = new Point(12, 198);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(278, 23);
-            txtEmail.TabIndex = 10;
+            txtEmail.Size = new Size(288, 23);
+            txtEmail.TabIndex = 2;
             // 
             // label4
             // 
@@ -167,8 +168,8 @@
             // 
             txtCep.Location = new Point(110, 264);
             txtCep.Name = "txtCep";
-            txtCep.Size = new Size(180, 23);
-            txtCep.TabIndex = 13;
+            txtCep.Size = new Size(110, 23);
+            txtCep.TabIndex = 3;
             // 
             // label6
             // 
@@ -183,8 +184,8 @@
             // 
             txtLogradouro.Location = new Point(110, 293);
             txtLogradouro.Name = "txtLogradouro";
-            txtLogradouro.Size = new Size(180, 23);
-            txtLogradouro.TabIndex = 15;
+            txtLogradouro.Size = new Size(190, 23);
+            txtLogradouro.TabIndex = 5;
             // 
             // label7
             // 
@@ -199,8 +200,8 @@
             // 
             txtNumero.Location = new Point(110, 322);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(180, 23);
-            txtNumero.TabIndex = 17;
+            txtNumero.Size = new Size(190, 23);
+            txtNumero.TabIndex = 6;
             // 
             // label8
             // 
@@ -215,8 +216,8 @@
             // 
             txtBairro.Location = new Point(110, 351);
             txtBairro.Name = "txtBairro";
-            txtBairro.Size = new Size(180, 23);
-            txtBairro.TabIndex = 19;
+            txtBairro.Size = new Size(190, 23);
+            txtBairro.TabIndex = 7;
             // 
             // label9
             // 
@@ -231,8 +232,8 @@
             // 
             txtCidade.Location = new Point(110, 380);
             txtCidade.Name = "txtCidade";
-            txtCidade.Size = new Size(180, 23);
-            txtCidade.TabIndex = 21;
+            txtCidade.Size = new Size(190, 23);
+            txtCidade.TabIndex = 8;
             // 
             // label10
             // 
@@ -247,8 +248,8 @@
             // 
             txtEstado.Location = new Point(110, 409);
             txtEstado.Name = "txtEstado";
-            txtEstado.Size = new Size(180, 23);
-            txtEstado.TabIndex = 23;
+            txtEstado.Size = new Size(190, 23);
+            txtEstado.TabIndex = 9;
             // 
             // label11
             // 
@@ -263,8 +264,8 @@
             // 
             txtWhatsApp.Location = new Point(12, 520);
             txtWhatsApp.Name = "txtWhatsApp";
-            txtWhatsApp.Size = new Size(278, 23);
-            txtWhatsApp.TabIndex = 27;
+            txtWhatsApp.Size = new Size(288, 23);
+            txtWhatsApp.TabIndex = 11;
             // 
             // label12
             // 
@@ -279,8 +280,8 @@
             // 
             txtTelefone.Location = new Point(12, 466);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(278, 23);
-            txtTelefone.TabIndex = 25;
+            txtTelefone.Size = new Size(288, 23);
+            txtTelefone.TabIndex = 10;
             // 
             // label13
             // 
@@ -295,8 +296,8 @@
             // 
             btnRegistrar.Location = new Point(12, 567);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(278, 38);
-            btnRegistrar.TabIndex = 28;
+            btnRegistrar.Size = new Size(288, 38);
+            btnRegistrar.TabIndex = 12;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
             // 
@@ -304,16 +305,26 @@
             // 
             btnLimpar.Location = new Point(12, 611);
             btnLimpar.Name = "btnLimpar";
-            btnLimpar.Size = new Size(278, 38);
-            btnLimpar.TabIndex = 29;
+            btnLimpar.Size = new Size(288, 38);
+            btnLimpar.TabIndex = 13;
             btnLimpar.Text = "Limpar Campos";
             btnLimpar.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(226, 264);
+            button1.Name = "button1";
+            button1.Size = new Size(74, 23);
+            button1.TabIndex = 4;
+            button1.Text = "Consultar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // formCadClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 661);
+            Controls.Add(button1);
             Controls.Add(btnLimpar);
             Controls.Add(btnRegistrar);
             Controls.Add(txtWhatsApp);
@@ -385,5 +396,6 @@
         private Label label13;
         private Button btnRegistrar;
         private Button btnLimpar;
+        private Button button1;
     }
 }
