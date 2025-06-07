@@ -55,7 +55,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrarUsuárioToolStripMenuItem, atualizarUsuárioToolStripMenuItem, voltarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1084, 24);
+            menuStrip1.Size = new Size(1184, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -84,7 +84,7 @@
             // 
             lbBemVindo.AutoSize = true;
             lbBemVindo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbBemVindo.Location = new Point(772, 43);
+            lbBemVindo.Location = new Point(872, 42);
             lbBemVindo.MaximumSize = new Size(300, 0);
             lbBemVindo.MinimumSize = new Size(300, 0);
             lbBemVindo.Name = "lbBemVindo";
@@ -95,7 +95,7 @@
             // 
             // btnAlterarSenha
             // 
-            btnAlterarSenha.Location = new Point(896, 79);
+            btnAlterarSenha.Location = new Point(996, 78);
             btnAlterarSenha.Name = "btnAlterarSenha";
             btnAlterarSenha.Size = new Size(176, 23);
             btnAlterarSenha.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             // txtAlterarSenha
             // 
-            txtAlterarSenha.Location = new Point(896, 108);
+            txtAlterarSenha.Location = new Point(996, 107);
             txtAlterarSenha.Name = "txtAlterarSenha";
             txtAlterarSenha.Size = new Size(176, 23);
             txtAlterarSenha.TabIndex = 3;
@@ -159,7 +159,7 @@
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Location = new Point(12, 250);
             dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.Size = new Size(1060, 399);
+            dgvUsuarios.Size = new Size(1160, 399);
             dgvUsuarios.TabIndex = 9;
             // 
             // label3
@@ -174,7 +174,7 @@
             // 
             // btnRecarregar
             // 
-            btnRecarregar.Location = new Point(944, 217);
+            btnRecarregar.Location = new Point(1044, 217);
             btnRecarregar.Name = "btnRecarregar";
             btnRecarregar.Size = new Size(128, 27);
             btnRecarregar.TabIndex = 11;
@@ -184,7 +184,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(810, 217);
+            btnExcluir.Location = new Point(910, 217);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(128, 27);
             btnExcluir.TabIndex = 12;
@@ -206,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1084, 661);
+            ClientSize = new Size(1184, 661);
             Controls.Add(btnLimpar);
             Controls.Add(btnExcluir);
             Controls.Add(btnRecarregar);

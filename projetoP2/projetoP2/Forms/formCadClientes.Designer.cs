@@ -64,16 +64,16 @@
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(452, 99);
+            dgvClientes.Location = new Point(330, 99);
             dgvClientes.Name = "dgvClientes";
-            dgvClientes.Size = new Size(620, 550);
+            dgvClientes.Size = new Size(842, 550);
             dgvClientes.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(452, 75);
+            label1.Location = new Point(330, 72);
             label1.Name = "label1";
             label1.Size = new Size(133, 21);
             label1.TabIndex = 1;
@@ -81,7 +81,7 @@
             // 
             // btnRecarregar
             // 
-            btnRecarregar.Location = new Point(938, 68);
+            btnRecarregar.Location = new Point(1042, 68);
             btnRecarregar.Name = "btnRecarregar";
             btnRecarregar.Size = new Size(130, 25);
             btnRecarregar.TabIndex = 2;
@@ -90,7 +90,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(802, 68);
+            btnExcluir.Location = new Point(906, 68);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(130, 25);
             btnExcluir.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(666, 68);
+            btnEditar.Location = new Point(770, 68);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(130, 25);
             btnEditar.TabIndex = 4;
@@ -313,7 +313,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1084, 661);
+            ClientSize = new Size(1184, 661);
             Controls.Add(btnLimpar);
             Controls.Add(btnRegistrar);
             Controls.Add(txtWhatsApp);
@@ -347,6 +347,7 @@
             Name = "formCadClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formulário de Cadastro de Clientes";
+            Load += formCadClientes_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
