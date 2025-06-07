@@ -4,7 +4,7 @@ Este projeto está sendo desenvolvido como parte de uma avaliação da disciplin
 
 ---
 
-## 📌 Funcionalidades
+## 📌 Funcionalidades implementadas até o momento
 
 - ✅ Interface gráfica amigável com múltiplos formulários.
 - 📁 Salvamento e carregamento de dados em arquivos `.csv`.
