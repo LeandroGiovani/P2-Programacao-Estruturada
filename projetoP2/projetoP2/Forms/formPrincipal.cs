@@ -20,7 +20,8 @@ namespace projetoP2.Forms
 
         private void cadastroDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form fromCadClientes = new formCadClientes();
+            fromCadClientes.Show();
         }
 
         private void cadastroDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
