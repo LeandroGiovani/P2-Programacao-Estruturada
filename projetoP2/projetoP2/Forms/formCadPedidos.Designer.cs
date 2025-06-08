@@ -32,11 +32,11 @@
             btnConsultarCpf = new Button();
             btnLimpar = new Button();
             btnRegistrar = new Button();
-            label9 = new Label();
+            lbNomeItem1 = new Label();
             txtItemNome1 = new TextBox();
-            label8 = new Label();
+            lbItemId1 = new Label();
             txtItemId1 = new TextBox();
-            label7 = new Label();
+            lbItem1 = new Label();
             label6 = new Label();
             txtNome = new TextBox();
             label2 = new Label();
@@ -47,36 +47,36 @@
             label3 = new Label();
             lbPreco = new Label();
             btnConsultarItemId1 = new Button();
-            label4 = new Label();
+            lbQuantidadeItem1 = new Label();
             txtQtdItem1 = new TextBox();
             btnMaisItem1 = new Button();
             btnMenosItem1 = new Button();
-            label5 = new Label();
+            lbTotalItem1 = new Label();
             txtTotalItem1 = new TextBox();
-            label10 = new Label();
+            lbTotalItem2 = new Label();
             txtTotalItem2 = new TextBox();
             btnMenosItem2 = new Button();
             btnMaisItem2 = new Button();
-            label11 = new Label();
+            lbQuantidadeItem2 = new Label();
             txtQtdItem2 = new TextBox();
             btnConsultarItemId2 = new Button();
-            label12 = new Label();
+            lbNomeItem2 = new Label();
             txtItemNome2 = new TextBox();
-            label13 = new Label();
+            lbItemId2 = new Label();
             txtItemId2 = new TextBox();
-            label14 = new Label();
-            label15 = new Label();
+            lbItem2 = new Label();
+            lbTotalItem3 = new Label();
             txtTotalItem3 = new TextBox();
             btnMenosItem3 = new Button();
             btnMaisItem3 = new Button();
-            label16 = new Label();
+            lbQuantidadeItem3 = new Label();
             txtQtdItem3 = new TextBox();
             btnConsultarItemId3 = new Button();
-            label17 = new Label();
+            lbNomeItem3 = new Label();
             txtItemNome3 = new TextBox();
-            label18 = new Label();
+            lbItemId3 = new Label();
             txtItemId3 = new TextBox();
-            label19 = new Label();
+            lbItem3 = new Label();
             radio1 = new RadioButton();
             label20 = new Label();
             rad1 = new RadioButton();
@@ -120,14 +120,14 @@
             btnRegistrar.Text = "Registrar Pedido";
             btnRegistrar.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // lbNomeItem1
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(12, 221);
-            label9.Name = "label9";
-            label9.Size = new Size(70, 15);
-            label9.TabIndex = 53;
-            label9.Text = "Nome item:";
+            lbNomeItem1.AutoSize = true;
+            lbNomeItem1.Location = new Point(12, 221);
+            lbNomeItem1.Name = "lbNomeItem1";
+            lbNomeItem1.Size = new Size(70, 15);
+            lbNomeItem1.TabIndex = 53;
+            lbNomeItem1.Text = "Nome item:";
             // 
             // txtItemNome1
             // 
@@ -136,14 +136,14 @@
             txtItemNome1.Size = new Size(195, 23);
             txtItemNome1.TabIndex = 8;
             // 
-            // label8
+            // lbItemId1
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(12, 192);
-            label8.Name = "label8";
-            label8.Size = new Size(77, 15);
-            label8.TabIndex = 52;
-            label8.Text = "Identificador:";
+            lbItemId1.AutoSize = true;
+            lbItemId1.Location = new Point(12, 192);
+            lbItemId1.Name = "lbItemId1";
+            lbItemId1.Size = new Size(77, 15);
+            lbItemId1.TabIndex = 52;
+            lbItemId1.Text = "Identificador:";
             // 
             // txtItemId1
             // 
@@ -152,14 +152,14 @@
             txtItemId1.Size = new Size(115, 23);
             txtItemId1.TabIndex = 6;
             // 
-            // label7
+            // lbItem1
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(12, 167);
-            label7.Name = "label7";
-            label7.Size = new Size(43, 15);
-            label7.TabIndex = 49;
-            label7.Text = "Item 1:";
+            lbItem1.AutoSize = true;
+            lbItem1.Location = new Point(12, 167);
+            lbItem1.Name = "lbItem1";
+            lbItem1.Size = new Size(43, 15);
+            lbItem1.TabIndex = 49;
+            lbItem1.Text = "Item 1:";
             // 
             // label6
             // 
@@ -255,16 +255,16 @@
             btnConsultarItemId1.Text = "Consultar";
             btnConsultarItemId1.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // lbQuantidadeItem1
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 250);
-            label4.MinimumSize = new Size(172, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(172, 15);
-            label4.TabIndex = 60;
-            label4.Text = "Quantidade";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            lbQuantidadeItem1.AutoSize = true;
+            lbQuantidadeItem1.Location = new Point(12, 250);
+            lbQuantidadeItem1.MinimumSize = new Size(172, 0);
+            lbQuantidadeItem1.Name = "lbQuantidadeItem1";
+            lbQuantidadeItem1.Size = new Size(172, 15);
+            lbQuantidadeItem1.TabIndex = 60;
+            lbQuantidadeItem1.Text = "Quantidade";
+            lbQuantidadeItem1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtQtdItem1
             // 
@@ -296,16 +296,16 @@
             btnMenosItem1.Text = "-";
             btnMenosItem1.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lbTotalItem1
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(191, 251);
-            label5.MinimumSize = new Size(99, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(99, 15);
-            label5.TabIndex = 64;
-            label5.Text = "Total Item 1";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            lbTotalItem1.AutoSize = true;
+            lbTotalItem1.Location = new Point(191, 251);
+            lbTotalItem1.MinimumSize = new Size(99, 0);
+            lbTotalItem1.Name = "lbTotalItem1";
+            lbTotalItem1.Size = new Size(99, 15);
+            lbTotalItem1.TabIndex = 64;
+            lbTotalItem1.Text = "Total Item 1";
+            lbTotalItem1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // txtTotalItem1
             // 
@@ -317,17 +317,17 @@
             txtTotalItem1.TabIndex = 63;
             txtTotalItem1.TabStop = false;
             // 
-            // label10
+            // lbTotalItem2
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(191, 387);
-            label10.MinimumSize = new Size(99, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(99, 15);
-            label10.TabIndex = 76;
-            label10.Text = "Total Item 1";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
-            label10.Visible = false;
+            lbTotalItem2.AutoSize = true;
+            lbTotalItem2.Location = new Point(191, 387);
+            lbTotalItem2.MinimumSize = new Size(99, 0);
+            lbTotalItem2.Name = "lbTotalItem2";
+            lbTotalItem2.Size = new Size(99, 15);
+            lbTotalItem2.TabIndex = 76;
+            lbTotalItem2.Text = "Total Item 1";
+            lbTotalItem2.TextAlign = ContentAlignment.MiddleCenter;
+            lbTotalItem2.Visible = false;
             // 
             // txtTotalItem2
             // 
@@ -362,17 +362,17 @@
             btnMaisItem2.UseVisualStyleBackColor = true;
             btnMaisItem2.Visible = false;
             // 
-            // label11
+            // lbQuantidadeItem2
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(12, 386);
-            label11.MinimumSize = new Size(172, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(172, 15);
-            label11.TabIndex = 74;
-            label11.Text = "Quantidade";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
-            label11.Visible = false;
+            lbQuantidadeItem2.AutoSize = true;
+            lbQuantidadeItem2.Location = new Point(12, 386);
+            lbQuantidadeItem2.MinimumSize = new Size(172, 0);
+            lbQuantidadeItem2.Name = "lbQuantidadeItem2";
+            lbQuantidadeItem2.Size = new Size(172, 15);
+            lbQuantidadeItem2.TabIndex = 74;
+            lbQuantidadeItem2.Text = "Quantidade";
+            lbQuantidadeItem2.TextAlign = ContentAlignment.MiddleCenter;
+            lbQuantidadeItem2.Visible = false;
             // 
             // txtQtdItem2
             // 
@@ -395,15 +395,15 @@
             btnConsultarItemId2.UseVisualStyleBackColor = true;
             btnConsultarItemId2.Visible = false;
             // 
-            // label12
+            // lbNomeItem2
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(12, 357);
-            label12.Name = "label12";
-            label12.Size = new Size(70, 15);
-            label12.TabIndex = 72;
-            label12.Text = "Nome item:";
-            label12.Visible = false;
+            lbNomeItem2.AutoSize = true;
+            lbNomeItem2.Location = new Point(12, 357);
+            lbNomeItem2.Name = "lbNomeItem2";
+            lbNomeItem2.Size = new Size(70, 15);
+            lbNomeItem2.TabIndex = 72;
+            lbNomeItem2.Text = "Nome item:";
+            lbNomeItem2.Visible = false;
             // 
             // txtItemNome2
             // 
@@ -413,15 +413,15 @@
             txtItemNome2.TabIndex = 13;
             txtItemNome2.Visible = false;
             // 
-            // label13
+            // lbItemId2
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(12, 328);
-            label13.Name = "label13";
-            label13.Size = new Size(77, 15);
-            label13.TabIndex = 71;
-            label13.Text = "Identificador:";
-            label13.Visible = false;
+            lbItemId2.AutoSize = true;
+            lbItemId2.Location = new Point(12, 328);
+            lbItemId2.Name = "lbItemId2";
+            lbItemId2.Size = new Size(77, 15);
+            lbItemId2.TabIndex = 71;
+            lbItemId2.Text = "Identificador:";
+            lbItemId2.Visible = false;
             // 
             // txtItemId2
             // 
@@ -431,27 +431,27 @@
             txtItemId2.TabIndex = 11;
             txtItemId2.Visible = false;
             // 
-            // label14
+            // lbItem2
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(12, 303);
-            label14.Name = "label14";
-            label14.Size = new Size(43, 15);
-            label14.TabIndex = 70;
-            label14.Text = "Item 2:";
-            label14.Visible = false;
+            lbItem2.AutoSize = true;
+            lbItem2.Location = new Point(12, 303);
+            lbItem2.Name = "lbItem2";
+            lbItem2.Size = new Size(43, 15);
+            lbItem2.TabIndex = 70;
+            lbItem2.Text = "Item 2:";
+            lbItem2.Visible = false;
             // 
-            // label15
+            // lbTotalItem3
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(191, 519);
-            label15.MinimumSize = new Size(99, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(99, 15);
-            label15.TabIndex = 88;
-            label15.Text = "Total Item 1";
-            label15.TextAlign = ContentAlignment.MiddleCenter;
-            label15.Visible = false;
+            lbTotalItem3.AutoSize = true;
+            lbTotalItem3.Location = new Point(191, 519);
+            lbTotalItem3.MinimumSize = new Size(99, 0);
+            lbTotalItem3.Name = "lbTotalItem3";
+            lbTotalItem3.Size = new Size(99, 15);
+            lbTotalItem3.TabIndex = 88;
+            lbTotalItem3.Text = "Total Item 1";
+            lbTotalItem3.TextAlign = ContentAlignment.MiddleCenter;
+            lbTotalItem3.Visible = false;
             // 
             // txtTotalItem3
             // 
@@ -486,17 +486,17 @@
             btnMaisItem3.UseVisualStyleBackColor = true;
             btnMaisItem3.Visible = false;
             // 
-            // label16
+            // lbQuantidadeItem3
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(12, 518);
-            label16.MinimumSize = new Size(172, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(172, 15);
-            label16.TabIndex = 86;
-            label16.Text = "Quantidade";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
-            label16.Visible = false;
+            lbQuantidadeItem3.AutoSize = true;
+            lbQuantidadeItem3.Location = new Point(12, 518);
+            lbQuantidadeItem3.MinimumSize = new Size(172, 0);
+            lbQuantidadeItem3.Name = "lbQuantidadeItem3";
+            lbQuantidadeItem3.Size = new Size(172, 15);
+            lbQuantidadeItem3.TabIndex = 86;
+            lbQuantidadeItem3.Text = "Quantidade";
+            lbQuantidadeItem3.TextAlign = ContentAlignment.MiddleCenter;
+            lbQuantidadeItem3.Visible = false;
             // 
             // txtQtdItem3
             // 
@@ -519,15 +519,15 @@
             btnConsultarItemId3.UseVisualStyleBackColor = true;
             btnConsultarItemId3.Visible = false;
             // 
-            // label17
+            // lbNomeItem3
             // 
-            label17.AutoSize = true;
-            label17.Location = new Point(12, 489);
-            label17.Name = "label17";
-            label17.Size = new Size(70, 15);
-            label17.TabIndex = 84;
-            label17.Text = "Nome item:";
-            label17.Visible = false;
+            lbNomeItem3.AutoSize = true;
+            lbNomeItem3.Location = new Point(12, 489);
+            lbNomeItem3.Name = "lbNomeItem3";
+            lbNomeItem3.Size = new Size(70, 15);
+            lbNomeItem3.TabIndex = 84;
+            lbNomeItem3.Text = "Nome item:";
+            lbNomeItem3.Visible = false;
             // 
             // txtItemNome3
             // 
@@ -537,15 +537,15 @@
             txtItemNome3.TabIndex = 18;
             txtItemNome3.Visible = false;
             // 
-            // label18
+            // lbItemId3
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(12, 460);
-            label18.Name = "label18";
-            label18.Size = new Size(77, 15);
-            label18.TabIndex = 83;
-            label18.Text = "Identificador:";
-            label18.Visible = false;
+            lbItemId3.AutoSize = true;
+            lbItemId3.Location = new Point(12, 460);
+            lbItemId3.Name = "lbItemId3";
+            lbItemId3.Size = new Size(77, 15);
+            lbItemId3.TabIndex = 83;
+            lbItemId3.Text = "Identificador:";
+            lbItemId3.Visible = false;
             // 
             // txtItemId3
             // 
@@ -555,15 +555,15 @@
             txtItemId3.TabIndex = 16;
             txtItemId3.Visible = false;
             // 
-            // label19
+            // lbItem3
             // 
-            label19.AutoSize = true;
-            label19.Location = new Point(12, 435);
-            label19.Name = "label19";
-            label19.Size = new Size(43, 15);
-            label19.TabIndex = 82;
-            label19.Text = "Item 3:";
-            label19.Visible = false;
+            lbItem3.AutoSize = true;
+            lbItem3.Location = new Point(12, 435);
+            lbItem3.Name = "lbItem3";
+            lbItem3.Size = new Size(43, 15);
+            lbItem3.TabIndex = 82;
+            lbItem3.Text = "Item 3:";
+            lbItem3.Visible = false;
             // 
             // radio1
             // 
@@ -595,6 +595,7 @@
             rad1.TabStop = true;
             rad1.Text = "1";
             rad1.UseVisualStyleBackColor = true;
+            rad1.CheckedChanged += rad1_CheckedChanged;
             // 
             // rad2
             // 
@@ -605,6 +606,7 @@
             rad2.TabIndex = 4;
             rad2.Text = "2";
             rad2.UseVisualStyleBackColor = true;
+            rad2.CheckedChanged += rad2_CheckedChanged;
             // 
             // rad3
             // 
@@ -615,6 +617,7 @@
             rad3.TabIndex = 5;
             rad3.Text = "3";
             rad3.UseVisualStyleBackColor = true;
+            rad3.CheckedChanged += rad3_CheckedChanged;
             // 
             // formCadPedidos
             // 
@@ -626,35 +629,35 @@
             Controls.Add(rad1);
             Controls.Add(label20);
             Controls.Add(radio1);
-            Controls.Add(label15);
+            Controls.Add(lbTotalItem3);
             Controls.Add(txtTotalItem3);
             Controls.Add(btnMenosItem3);
             Controls.Add(btnMaisItem3);
-            Controls.Add(label16);
+            Controls.Add(lbQuantidadeItem3);
             Controls.Add(txtQtdItem3);
             Controls.Add(btnConsultarItemId3);
-            Controls.Add(label17);
+            Controls.Add(lbNomeItem3);
             Controls.Add(txtItemNome3);
-            Controls.Add(label18);
+            Controls.Add(lbItemId3);
             Controls.Add(txtItemId3);
-            Controls.Add(label19);
-            Controls.Add(label10);
+            Controls.Add(lbItem3);
+            Controls.Add(lbTotalItem2);
             Controls.Add(txtTotalItem2);
             Controls.Add(btnMenosItem2);
             Controls.Add(btnMaisItem2);
-            Controls.Add(label11);
+            Controls.Add(lbQuantidadeItem2);
             Controls.Add(txtQtdItem2);
             Controls.Add(btnConsultarItemId2);
-            Controls.Add(label12);
+            Controls.Add(lbNomeItem2);
             Controls.Add(txtItemNome2);
-            Controls.Add(label13);
+            Controls.Add(lbItemId2);
             Controls.Add(txtItemId2);
-            Controls.Add(label14);
-            Controls.Add(label5);
+            Controls.Add(lbItem2);
+            Controls.Add(lbTotalItem1);
             Controls.Add(txtTotalItem1);
             Controls.Add(btnMenosItem1);
             Controls.Add(btnMaisItem1);
-            Controls.Add(label4);
+            Controls.Add(lbQuantidadeItem1);
             Controls.Add(txtQtdItem1);
             Controls.Add(btnConsultarItemId1);
             Controls.Add(lbPreco);
@@ -663,11 +666,11 @@
             Controls.Add(btnConsultarCpf);
             Controls.Add(btnLimpar);
             Controls.Add(btnRegistrar);
-            Controls.Add(label9);
+            Controls.Add(lbNomeItem1);
             Controls.Add(txtItemNome1);
-            Controls.Add(label8);
+            Controls.Add(lbItemId1);
             Controls.Add(txtItemId1);
-            Controls.Add(label7);
+            Controls.Add(lbItem1);
             Controls.Add(label6);
             Controls.Add(txtNome);
             Controls.Add(label2);
@@ -690,14 +693,14 @@
         private Button btnConsultarCpf;
         private Button btnLimpar;
         private Button btnRegistrar;
-        private Label label9;
+        private Label lbNomeItem1;
         private TextBox txtItemNome1;
-        private Label label8;
+        private Label lbItemId1;
         private TextBox txtItemId1;
-        private Label label7;
+        private Label lbItem1;
         private Label label6;
         private TextBox txtEmail;
-        private Label label4;
+        private Label lbQuantidadeItem1;
         private TextBox txtNome;
         private Label label2;
         private Button btnEditar;
@@ -711,32 +714,32 @@
         private TextBox txtQtdItem1;
         private Button btnMaisItem1;
         private Button btnMenosItem1;
-        private Label label5;
+        private Label lbTotalItem1;
         private TextBox txtTotalItem1;
-        private Label label10;
+        private Label lbTotalItem2;
         private TextBox txtTotalItem2;
         private Button btnMenosItem2;
         private Button btnMaisItem2;
-        private Label label11;
+        private Label lbQuantidadeItem2;
         private TextBox txtQtdItem2;
         private Button btnConsultarItemId2;
-        private Label label12;
+        private Label lbNomeItem2;
         private TextBox txtItemNome2;
-        private Label label13;
+        private Label lbItemId2;
         private TextBox txtItemId2;
-        private Label label14;
-        private Label label15;
+        private Label lbItem2;
+        private Label lbTotalItem3;
         private TextBox txtTotalItem3;
         private Button btnMenosItem3;
         private Button btnMaisItem3;
-        private Label label16;
+        private Label lbQuantidadeItem3;
         private TextBox txtQtdItem3;
         private Button btnConsultarItemId3;
-        private Label label17;
+        private Label lbNomeItem3;
         private TextBox txtItemNome3;
-        private Label label18;
+        private Label lbItemId3;
         private TextBox txtItemId3;
-        private Label label19;
+        private Label lbItem3;
         private RadioButton radio1;
         private Label label20;
         private RadioButton rad1;
