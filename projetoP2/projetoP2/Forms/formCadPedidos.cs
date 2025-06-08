@@ -16,6 +16,7 @@ namespace projetoP2.Forms
         public formCadPedidos()
         {
             InitializeComponent();
+            CsvFuncs.InicializarCsv(CsvFuncs.pedidosCsv, new string[] { "ID Registro", "CPF Cliente", "Itens do Pedido", "Preço Total" });
         }
 
         private void LimparCampos(int totalItens = 3)
@@ -242,6 +243,73 @@ namespace projetoP2.Forms
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
-        }   
+        }
+
+        private void formCadPedidos_Load(object sender, EventArgs e)
+        {
+            CrudFuncs.AtualizarDataGrid(dgvPedidos, CsvFuncs.pedidosCsv);
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            string cpf = txtCpf.Text.Trim();
+            string nome = txtNome.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrWhiteSpace(nome))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.", "Campos Vazios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(lbPreco.Text.Replace("R$", "").Trim(), out decimal precoTotal) || precoTotal <= 0)
+            {
+                MessageBox.Show("O preço total deve ser um valor válido e maior que zero.", "Preço Inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!FuncsAuxiliares.ValidarCpf(cpf, nome)) return;
+
+            if (!FuncsAuxiliares.ValidarItem(txtItemId1, txtItemNome1, txtQtdItem1, 1)) return;
+
+            if (rad2.Checked && !FuncsAuxiliares.ValidarItem(txtItemId2, txtItemNome2, txtQtdItem2, 2)) return;
+
+            if (rad3.Checked)
+            {
+                if (!FuncsAuxiliares.ValidarItem(txtItemId2, txtItemNome2, txtQtdItem2, 2)) return;
+                if (!FuncsAuxiliares.ValidarItem(txtItemId3, txtItemNome3, txtQtdItem3, 3)) return;
+            }
+
+            if (FuncsAuxiliares.TemItensRepetidos(txtItemId1, txtItemId2, txtItemId3, rad2, rad3))
+            {
+                MessageBox.Show("Não é permitido adicionar o mesmo item mais de uma vez.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string itensPedido = $"{txtItemId1.Text} - {txtItemNome1.Text} ({txtQtdItem1.Text})";
+
+            if (rad2.Checked || rad3.Checked)
+            {
+                itensPedido += $"; {txtItemId2.Text} - {txtItemNome2.Text} ({txtQtdItem2.Text})";
+            }
+
+            if (rad3.Checked)
+            {
+                itensPedido += $"; {txtItemId3.Text} - {txtItemNome3.Text} ({txtQtdItem3.Text})";
+            }
+
+            CrudFuncs.CriarOuEditarRegistro(
+                dgvPedidos,
+                CsvFuncs.pedidosCsv,
+                new string[]
+                {
+                    txtIdRegistro.Text.Trim(),
+                    txtCpf.Text.Trim(),
+                    itensPedido,
+                    precoTotal.ToString()
+                },
+                -1,
+                0
+            );
+        }
     }
 }

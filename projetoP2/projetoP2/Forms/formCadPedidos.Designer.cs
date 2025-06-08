@@ -43,7 +43,7 @@
             btnExcluir = new Button();
             btnRecarregar = new Button();
             label1 = new Label();
-            dgvClientes = new DataGridView();
+            dgvPedidos = new DataGridView();
             label3 = new Label();
             lbPreco = new Label();
             btnConsultarItemId1 = new Button();
@@ -84,7 +84,7 @@
             rad3 = new RadioButton();
             txtIdRegistro = new TextBox();
             label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
             SuspendLayout();
             // 
             // txtCpf
@@ -123,6 +123,7 @@
             btnRegistrar.TabIndex = 22;
             btnRegistrar.Text = "Registrar Pedido";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // lbNomeItem1
             // 
@@ -222,14 +223,14 @@
             label1.TabIndex = 30;
             label1.Text = "Tabela de Pedidos";
             // 
-            // dgvClientes
+            // dgvPedidos
             // 
-            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(330, 43);
-            dgvClientes.Name = "dgvClientes";
-            dgvClientes.Size = new Size(842, 606);
-            dgvClientes.TabIndex = 27;
-            dgvClientes.TabStop = false;
+            dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedidos.Location = new Point(330, 43);
+            dgvPedidos.Name = "dgvPedidos";
+            dgvPedidos.Size = new Size(842, 606);
+            dgvPedidos.TabIndex = 27;
+            dgvPedidos.TabStop = false;
             // 
             // label3
             // 
@@ -651,7 +652,6 @@
             txtIdRegistro.BackColor = SystemColors.Window;
             txtIdRegistro.Location = new Point(101, 14);
             txtIdRegistro.Name = "txtIdRegistro";
-            txtIdRegistro.ReadOnly = true;
             txtIdRegistro.Size = new Size(189, 23);
             txtIdRegistro.TabIndex = 0;
             // 
@@ -724,11 +724,12 @@
             Controls.Add(btnExcluir);
             Controls.Add(btnRecarregar);
             Controls.Add(label1);
-            Controls.Add(dgvClientes);
+            Controls.Add(dgvPedidos);
             Name = "formCadPedidos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formulário de Cadastro de Pedidos";
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            Load += formCadPedidos_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -754,7 +755,7 @@
         private Button btnExcluir;
         private Button btnRecarregar;
         private Label label1;
-        private DataGridView dgvClientes;
+        private DataGridView dgvPedidos;
         private Label label3;
         private Label lbPreco;
         private Button btnConsultarItemId1;
