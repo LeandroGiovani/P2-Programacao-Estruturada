@@ -101,6 +101,7 @@
             btnConsultarCpf.TabIndex = 1;
             btnConsultarCpf.Text = "Consultar";
             btnConsultarCpf.UseVisualStyleBackColor = true;
+            btnConsultarCpf.Click += btnConsultarCpf_Click;
             // 
             // btnLimpar
             // 
@@ -131,8 +132,10 @@
             // 
             // txtItemNome1
             // 
+            txtItemNome1.BackColor = SystemColors.Window;
             txtItemNome1.Location = new Point(95, 218);
             txtItemNome1.Name = "txtItemNome1";
+            txtItemNome1.ReadOnly = true;
             txtItemNome1.Size = new Size(195, 23);
             txtItemNome1.TabIndex = 8;
             // 
@@ -172,8 +175,10 @@
             // 
             // txtNome
             // 
+            txtNome.BackColor = SystemColors.Window;
             txtNome.Location = new Point(12, 92);
             txtNome.Name = "txtNome";
+            txtNome.ReadOnly = true;
             txtNome.Size = new Size(278, 23);
             txtNome.TabIndex = 2;
             // 
@@ -254,6 +259,7 @@
             btnConsultarItemId1.TabIndex = 7;
             btnConsultarItemId1.Text = "Consultar";
             btnConsultarItemId1.UseVisualStyleBackColor = true;
+            btnConsultarItemId1.Click += btnConsultarItemId1_Click;
             // 
             // lbQuantidadeItem1
             // 
@@ -275,6 +281,7 @@
             txtQtdItem1.Size = new Size(80, 23);
             txtQtdItem1.TabIndex = 59;
             txtQtdItem1.TabStop = false;
+            txtQtdItem1.TextAlign = HorizontalAlignment.Center;
             // 
             // btnMaisItem1
             // 
@@ -285,6 +292,7 @@
             btnMaisItem1.TabIndex = 10;
             btnMaisItem1.Text = "+";
             btnMaisItem1.UseVisualStyleBackColor = true;
+            btnMaisItem1.Click += btnMaisItem1_Click;
             // 
             // btnMenosItem1
             // 
@@ -295,6 +303,7 @@
             btnMenosItem1.TabIndex = 9;
             btnMenosItem1.Text = "-";
             btnMenosItem1.UseVisualStyleBackColor = true;
+            btnMenosItem1.Click += btnMenosItem1_Click;
             // 
             // lbTotalItem1
             // 
@@ -316,6 +325,7 @@
             txtTotalItem1.Size = new Size(99, 23);
             txtTotalItem1.TabIndex = 63;
             txtTotalItem1.TabStop = false;
+            txtTotalItem1.TextAlign = HorizontalAlignment.Center;
             // 
             // lbTotalItem2
             // 
@@ -325,7 +335,7 @@
             lbTotalItem2.Name = "lbTotalItem2";
             lbTotalItem2.Size = new Size(99, 15);
             lbTotalItem2.TabIndex = 76;
-            lbTotalItem2.Text = "Total Item 1";
+            lbTotalItem2.Text = "Total Item 2";
             lbTotalItem2.TextAlign = ContentAlignment.MiddleCenter;
             lbTotalItem2.Visible = false;
             // 
@@ -338,6 +348,7 @@
             txtTotalItem2.Size = new Size(99, 23);
             txtTotalItem2.TabIndex = 75;
             txtTotalItem2.TabStop = false;
+            txtTotalItem2.TextAlign = HorizontalAlignment.Center;
             txtTotalItem2.Visible = false;
             // 
             // btnMenosItem2
@@ -383,6 +394,7 @@
             txtQtdItem2.Size = new Size(80, 23);
             txtQtdItem2.TabIndex = 73;
             txtQtdItem2.TabStop = false;
+            txtQtdItem2.TextAlign = HorizontalAlignment.Center;
             txtQtdItem2.Visible = false;
             // 
             // btnConsultarItemId2
@@ -407,8 +419,10 @@
             // 
             // txtItemNome2
             // 
+            txtItemNome2.BackColor = SystemColors.Window;
             txtItemNome2.Location = new Point(95, 354);
             txtItemNome2.Name = "txtItemNome2";
+            txtItemNome2.ReadOnly = true;
             txtItemNome2.Size = new Size(195, 23);
             txtItemNome2.TabIndex = 13;
             txtItemNome2.Visible = false;
@@ -449,7 +463,7 @@
             lbTotalItem3.Name = "lbTotalItem3";
             lbTotalItem3.Size = new Size(99, 15);
             lbTotalItem3.TabIndex = 88;
-            lbTotalItem3.Text = "Total Item 1";
+            lbTotalItem3.Text = "Total Item 3";
             lbTotalItem3.TextAlign = ContentAlignment.MiddleCenter;
             lbTotalItem3.Visible = false;
             // 
@@ -462,6 +476,7 @@
             txtTotalItem3.Size = new Size(99, 23);
             txtTotalItem3.TabIndex = 87;
             txtTotalItem3.TabStop = false;
+            txtTotalItem3.TextAlign = HorizontalAlignment.Center;
             txtTotalItem3.Visible = false;
             // 
             // btnMenosItem3
@@ -507,6 +522,7 @@
             txtQtdItem3.Size = new Size(80, 23);
             txtQtdItem3.TabIndex = 85;
             txtQtdItem3.TabStop = false;
+            txtQtdItem3.TextAlign = HorizontalAlignment.Center;
             txtQtdItem3.Visible = false;
             // 
             // btnConsultarItemId3
@@ -531,8 +547,10 @@
             // 
             // txtItemNome3
             // 
+            txtItemNome3.BackColor = SystemColors.Window;
             txtItemNome3.Location = new Point(95, 486);
             txtItemNome3.Name = "txtItemNome3";
+            txtItemNome3.ReadOnly = true;
             txtItemNome3.Size = new Size(195, 23);
             txtItemNome3.TabIndex = 18;
             txtItemNome3.Visible = false;

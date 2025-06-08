@@ -59,6 +59,23 @@ namespace projetoP2.Utils
             MessageBox.Show("Registro salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+            public static string[]? LerRegistroPorCampoUnico(string caminhoCsv, int indiceCampoUnico, string valorProcurado)
+            {
+                var linhas = File.ReadAllLines(caminhoCsv).Skip(1);
+
+                foreach (var linha in linhas)
+                {
+                    var campos = linha.Split(',');
+                    if (campos.Length > indiceCampoUnico && campos[indiceCampoUnico] == valorProcurado)
+                    {
+                        return campos;
+                    }
+                }
+            
+                MessageBox.Show("Registro não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+
 
         public static void ExcluirRegistro(DataGridView dgv, string caminhoCsv, int index)
         {
