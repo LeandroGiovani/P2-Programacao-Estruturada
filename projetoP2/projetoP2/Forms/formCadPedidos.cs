@@ -20,6 +20,7 @@ namespace projetoP2.Forms
 
         private void LimparCampos(int totalItens = 3)
         {
+            txtIdRegistro.Text = string.Empty;
             txtCpf.Text = string.Empty;
             txtNome.Text = string.Empty;
 

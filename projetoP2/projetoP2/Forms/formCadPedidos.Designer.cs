@@ -82,15 +82,17 @@
             rad1 = new RadioButton();
             rad2 = new RadioButton();
             rad3 = new RadioButton();
+            txtIdRegistro = new TextBox();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(12, 43);
+            txtCpf.Location = new Point(58, 43);
             txtCpf.Mask = "999.999.999-99";
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(198, 23);
+            txtCpf.Size = new Size(152, 23);
             txtCpf.TabIndex = 0;
             // 
             // btnConsultarCpf
@@ -168,7 +170,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 25);
+            label6.Location = new Point(12, 47);
             label6.Name = "label6";
             label6.Size = new Size(31, 15);
             label6.TabIndex = 46;
@@ -644,11 +646,31 @@
             rad3.UseVisualStyleBackColor = true;
             rad3.CheckedChanged += rad3_CheckedChanged;
             // 
+            // txtIdRegistro
+            // 
+            txtIdRegistro.BackColor = SystemColors.Window;
+            txtIdRegistro.Location = new Point(101, 14);
+            txtIdRegistro.Name = "txtIdRegistro";
+            txtIdRegistro.ReadOnly = true;
+            txtIdRegistro.Size = new Size(189, 23);
+            txtIdRegistro.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(83, 15);
+            label4.TabIndex = 92;
+            label4.Text = "Id do Registro:";
+            // 
             // formCadPedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 661);
+            Controls.Add(label4);
+            Controls.Add(txtIdRegistro);
             Controls.Add(rad3);
             Controls.Add(rad2);
             Controls.Add(rad1);
@@ -770,5 +792,7 @@
         private RadioButton rad1;
         private RadioButton rad2;
         private RadioButton rad3;
+        private TextBox txtIdRegistro;
+        private Label label4;
     }
 }
