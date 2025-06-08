@@ -41,6 +41,11 @@ namespace projetoP2.Forms
             Form formCadPedidos = new formCadPedidos();
             formCadPedidos.Show();
         }
+        private void formulárioDeConsultaDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formConsultaPedidos = new formConsultaPedidos();
+            formConsultaPedidos.Show();
+        }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {

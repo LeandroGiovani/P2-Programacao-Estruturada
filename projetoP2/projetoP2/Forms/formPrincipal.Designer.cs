@@ -35,15 +35,16 @@
             cadastroDeUsuáriosToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             fecharProgramaToolStripMenuItem = new ToolStripMenuItem();
+            formulárioDeConsultaDePedidosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeClientesToolStripMenuItem, cadastroDeProdutosToolStripMenuItem, cadastroDePedidosToolStripMenuItem, cadastroDeUsuáriosToolStripMenuItem, sairToolStripMenuItem, fecharProgramaToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroDeClientesToolStripMenuItem, cadastroDeProdutosToolStripMenuItem, cadastroDePedidosToolStripMenuItem, formulárioDeConsultaDePedidosToolStripMenuItem, cadastroDeUsuáriosToolStripMenuItem, sairToolStripMenuItem, fecharProgramaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Size = new Size(938, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -89,11 +90,18 @@
             fecharProgramaToolStripMenuItem.Text = "Fechar Programa";
             fecharProgramaToolStripMenuItem.Click += fecharProgramaToolStripMenuItem_Click;
             // 
+            // formulárioDeConsultaDePedidosToolStripMenuItem
+            // 
+            formulárioDeConsultaDePedidosToolStripMenuItem.Name = "formulárioDeConsultaDePedidosToolStripMenuItem";
+            formulárioDeConsultaDePedidosToolStripMenuItem.Size = new Size(204, 20);
+            formulárioDeConsultaDePedidosToolStripMenuItem.Text = "Formulário de Consulta de Pedidos";
+            formulárioDeConsultaDePedidosToolStripMenuItem.Click += formulárioDeConsultaDePedidosToolStripMenuItem_Click;
+            // 
             // formPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(938, 450);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "formPrincipal";
@@ -114,5 +122,6 @@
         private ToolStripMenuItem cadastroDeUsuáriosToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem fecharProgramaToolStripMenuItem;
+        private ToolStripMenuItem formulárioDeConsultaDePedidosToolStripMenuItem;
     }
 }
