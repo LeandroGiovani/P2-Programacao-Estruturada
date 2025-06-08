@@ -348,10 +348,9 @@ namespace projetoP2.Forms
                 );
             }
         }
-
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            exclusaoIndex = dgvPedidos.CurrentCell.RowIndex;
+            exclusaoIndex = dgvPedidos.CurrentCell?.RowIndex ?? -1;
 
             if (exclusaoIndex == -1)
             {
@@ -359,9 +358,25 @@ namespace projetoP2.Forms
                 return;
             }
 
+            string? idPedido = dgvPedidos.Rows[exclusaoIndex].Cells[0].Value.ToString();
+            string? cpf = dgvPedidos.Rows[exclusaoIndex].Cells[1].Value.ToString();
+            string chaveBusca = $"{cpf}#{idPedido}";
+
+            string[] todasLinhas = File.ReadAllLines(CsvFuncs.produtosPedidosCsv);
+            List<string> linhasMantidas = new List<string>();
+
+            foreach (string linha in todasLinhas)
+            {
+                if (!linha.StartsWith(chaveBusca))
+                    linhasMantidas.Add(linha);
+            }
+
+            File.WriteAllLines(CsvFuncs.produtosPedidosCsv, linhasMantidas);
             CrudFuncs.ExcluirRegistro(dgvPedidos, CsvFuncs.pedidosCsv, exclusaoIndex);
+
             LimparCampos();
             exclusaoIndex = -1;
         }
+
     }
 }

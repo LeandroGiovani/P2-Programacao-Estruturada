@@ -1,4 +1,3 @@
 ID Registro,CPF Cliente,Itens do Pedido,Preço Total
-1,123.123.123-12,1 - Produto 1 (1); 2 - Produto 2 (1); 3 - Produto 3 (1),R$ 2100.92
 2,123.123.123-12,3 - Produto 3 (3); 4 - Produto 4 (6); 5 - Produto 5 (11),R$ 169795.61
 3,123.123.123-17,3 - Produto 3 (2); 5 - Produto 5 (3),R$ 46364.03
