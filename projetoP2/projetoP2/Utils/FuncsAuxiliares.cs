@@ -10,7 +10,7 @@ namespace projetoP2.Utils
     {
         public static bool ValidarCpf(string cpf, string nome)
         {
-            if (cpf.Length != 11)
+            if (cpf.Replace(".", "").Replace("-", "").Length != 11)
             {
                 MessageBox.Show("O CPF deve conter 11 dígitos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

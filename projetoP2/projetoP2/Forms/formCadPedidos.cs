@@ -307,7 +307,7 @@ namespace projetoP2.Forms
                     txtIdRegistro.Text.Trim(),
                     txtCpf.Text.Trim(),
                     itensPedido,
-                    precoTotal.ToString()
+                    $"R$ {precoTotal.ToString()}"
                 },
                 exclusaoIndex,
                 0
