@@ -39,6 +39,8 @@
             btnLimparConsulta = new Button();
             lbIdPedido = new Label();
             lvConsultaPedido = new ListView();
+            lbValorTotal = new Label();
+            btnLimparCampos = new Button();
             SuspendLayout();
             // 
             // lvPedidos
@@ -49,18 +51,17 @@
             lvPedidos.Location = new Point(12, 197);
             lvPedidos.MultiSelect = false;
             lvPedidos.Name = "lvPedidos";
-            lvPedidos.Size = new Size(355, 452);
+            lvPedidos.Size = new Size(421, 417);
             lvPedidos.TabIndex = 0;
             lvPedidos.UseCompatibleStateImageBehavior = false;
             lvPedidos.View = View.Details;
-            lvPedidos.SelectedIndexChanged += this.lvPedidos_SelectedIndexChanged;
             // 
             // txtCpf
             // 
             txtCpf.Location = new Point(12, 69);
             txtCpf.Mask = "999.999.999-99";
             txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(210, 23);
+            txtCpf.Size = new Size(276, 23);
             txtCpf.TabIndex = 1;
             // 
             // txtNome
@@ -69,12 +70,12 @@
             txtNome.Location = new Point(12, 121);
             txtNome.Name = "txtNome";
             txtNome.ReadOnly = true;
-            txtNome.Size = new Size(355, 23);
+            txtNome.Size = new Size(421, 23);
             txtNome.TabIndex = 2;
             // 
             // btnPesquisar
             // 
-            btnPesquisar.Location = new Point(228, 69);
+            btnPesquisar.Location = new Point(294, 69);
             btnPesquisar.Name = "btnPesquisar";
             btnPesquisar.Size = new Size(139, 23);
             btnPesquisar.TabIndex = 3;
@@ -109,11 +110,10 @@
             label3.Size = new Size(182, 21);
             label3.TabIndex = 6;
             label3.Text = "Visualização dos Pedidos";
-            label3.Click += this.label3_Click;
             // 
             // btnConsultarPedido
             // 
-            btnConsultarPedido.Location = new Point(228, 168);
+            btnConsultarPedido.Location = new Point(294, 168);
             btnConsultarPedido.Name = "btnConsultarPedido";
             btnConsultarPedido.Size = new Size(139, 23);
             btnConsultarPedido.TabIndex = 7;
@@ -129,12 +129,13 @@
             btnLimparConsulta.TabIndex = 10;
             btnLimparConsulta.Text = "Limpar Consulta";
             btnLimparConsulta.UseVisualStyleBackColor = true;
+            btnLimparConsulta.Click += btnLimparConsulta_Click;
             // 
             // lbIdPedido
             // 
             lbIdPedido.AutoSize = true;
             lbIdPedido.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbIdPedido.Location = new Point(429, 45);
+            lbIdPedido.Location = new Point(468, 45);
             lbIdPedido.Name = "lbIdPedido";
             lbIdPedido.Size = new Size(173, 21);
             lbIdPedido.TabIndex = 9;
@@ -145,19 +146,41 @@
             lvConsultaPedido.FullRowSelect = true;
             lvConsultaPedido.GridLines = true;
             lvConsultaPedido.HoverSelection = true;
-            lvConsultaPedido.Location = new Point(429, 69);
+            lvConsultaPedido.Location = new Point(468, 69);
             lvConsultaPedido.MultiSelect = false;
             lvConsultaPedido.Name = "lvConsultaPedido";
-            lvConsultaPedido.Size = new Size(743, 580);
+            lvConsultaPedido.Size = new Size(704, 545);
             lvConsultaPedido.TabIndex = 8;
             lvConsultaPedido.UseCompatibleStateImageBehavior = false;
             lvConsultaPedido.View = View.Details;
+            // 
+            // lbValorTotal
+            // 
+            lbValorTotal.AutoSize = true;
+            lbValorTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbValorTotal.Location = new Point(468, 622);
+            lbValorTotal.Name = "lbValorTotal";
+            lbValorTotal.Size = new Size(168, 21);
+            lbValorTotal.TabIndex = 11;
+            lbValorTotal.Text = "Valor Total do Pedido -:";
+            // 
+            // btnLimparCampos
+            // 
+            btnLimparCampos.Location = new Point(12, 620);
+            btnLimparCampos.Name = "btnLimparCampos";
+            btnLimparCampos.Size = new Size(421, 23);
+            btnLimparCampos.TabIndex = 12;
+            btnLimparCampos.Text = "Limpar Campos";
+            btnLimparCampos.UseVisualStyleBackColor = true;
+            btnLimparCampos.Click += btnLimparCampos_Click;
             // 
             // formConsultaPedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 661);
+            Controls.Add(btnLimparCampos);
+            Controls.Add(lbValorTotal);
             Controls.Add(btnLimparConsulta);
             Controls.Add(lbIdPedido);
             Controls.Add(lvConsultaPedido);
@@ -171,7 +194,7 @@
             Controls.Add(lvPedidos);
             Name = "formConsultaPedidos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Formulário de Consulta de Pedidos";
+            Text = "AD";
             Load += formConsultaPedidos_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -190,5 +213,7 @@
         private Button btnLimparConsulta;
         private Label lbIdPedido;
         private ListView lvConsultaPedido;
+        private Label lbValorTotal;
+        private Button btnLimparCampos;
     }
 }
