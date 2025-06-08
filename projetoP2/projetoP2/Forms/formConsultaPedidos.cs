@@ -54,6 +54,9 @@ namespace projetoP2.Forms
             }
         }
 
+        private void btnConsultarPedido_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
