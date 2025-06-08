@@ -19,6 +19,7 @@ namespace projetoP2.Forms
         {
             InitializeComponent();
             CsvFuncs.InicializarCsv(CsvFuncs.pedidosCsv, new string[] { "ID Registro", "CPF Cliente", "Itens do Pedido", "Preço Total" });
+            CsvFuncs.InicializarCsv(CsvFuncs.produtosPedidosCsv, new string[] { "Id Pedido", "Id Produto", "Nome Produto", "Quantidade", "Preço Unitário", "Preço Total" });
         }
 
         private void LimparCampos(int totalItens = 3)
@@ -312,6 +313,40 @@ namespace projetoP2.Forms
                 exclusaoIndex,
                 0
             );
+
+            string[] itensDoPedido = itensPedido.Split(';').Select(i => i.Trim()).ToArray();
+
+            foreach(string item in itensDoPedido)
+            {
+                string[] partes = item.Split('-');
+
+                string idProduto = partes[0].Trim();
+                string nomeProduto = partes[1].Trim().Split('(')[0].Trim();
+                string quantidade = partes[1].Trim().Split('(')[1].Replace(")", "").Trim();
+
+                string[]? produto = CrudFuncs.LerRegistroPorCampoUnico(CsvFuncs.produtosCsv, 0, idProduto);
+
+                if (produto == null || produto.Length == 0) continue;
+
+                decimal precoUnitario = decimal.Parse(produto[2].Replace("R$", "").Trim());
+                decimal precoTotalItem = precoUnitario * int.Parse(quantidade);
+
+                CrudFuncs.CriarOuEditarRegistro(
+                    null,
+                    CsvFuncs.produtosPedidosCsv,
+                    new string[]
+                    {
+                        $"{txtCpf.Text.Replace(".", "").Replace("-", "").Trim()}#{txtIdRegistro.Text.Trim()}#{idProduto}",
+                        idProduto,
+                        nomeProduto,
+                        quantidade,
+                        $"R$ {precoUnitario.ToString()}",
+                        $"R$ {precoTotalItem.ToString()}"
+                    },
+                    exclusaoIndex,
+                    0
+                );
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

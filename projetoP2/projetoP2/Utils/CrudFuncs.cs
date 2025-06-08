@@ -22,7 +22,7 @@ namespace projetoP2.Utils
             }
         }
 
-        public static void CriarOuEditarRegistro(DataGridView dgv, string caminhoCsv, string[] dados, int indexEdicao = -1, int indiceCampoUnico = -1)
+        public static void CriarOuEditarRegistro(DataGridView? dgv, string caminhoCsv, string[] dados, int indexEdicao = -1, int indiceCampoUnico = -1)
         {
             if (dados.Any(string.IsNullOrWhiteSpace))
             {
@@ -55,26 +55,43 @@ namespace projetoP2.Utils
             }
 
             File.WriteAllLines(caminhoCsv, linhas);
-            AtualizarDataGrid(dgv, caminhoCsv);
-            MessageBox.Show("Registro salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgv != null) 
+            {
+                AtualizarDataGrid(dgv, caminhoCsv);
+                MessageBox.Show("Registro salvo com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
-            public static string[]? LerRegistroPorCampoUnico(string caminhoCsv, int indiceCampoUnico, string valorProcurado)
-            {
-                var linhas = File.ReadAllLines(caminhoCsv).Skip(1);
+        public static string[]? LerRegistroPorCampoUnico(string caminhoCsv, int indiceCampoUnico, string valorProcurado)
+        {
+            var linhas = File.ReadAllLines(caminhoCsv).Skip(1);
 
-                foreach (var linha in linhas)
+            foreach (var linha in linhas)
+            {
+                var campos = linha.Split(',');
+                if (campos.Length > indiceCampoUnico && campos[indiceCampoUnico] == valorProcurado)
                 {
-                    var campos = linha.Split(',');
-                    if (campos.Length > indiceCampoUnico && campos[indiceCampoUnico] == valorProcurado)
-                    {
-                        return campos;
-                    }
+                    return campos;
                 }
-            
-                MessageBox.Show("Registro não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return null;
             }
+            
+            MessageBox.Show("Registro não encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return null;
+        }
+
+        public static string[] LerLinhasPorCampo(string caminhoCsv, int indiceCampo, string valorProcurado)
+        {
+            List<string> resultado = new List<string>();
+
+            foreach (string linha in File.ReadAllLines(caminhoCsv))
+            {
+                string[] partes = linha.Split(',');
+                if (partes.Length > indiceCampo && partes[indiceCampo] == valorProcurado)
+                    resultado.Add(linha);
+            }
+
+            return resultado.ToArray();
+        }
 
 
         public static void ExcluirRegistro(DataGridView dgv, string caminhoCsv, int index)

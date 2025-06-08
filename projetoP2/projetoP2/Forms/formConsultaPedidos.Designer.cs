@@ -35,19 +35,25 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            btnConsultarPedido = new Button();
             SuspendLayout();
             // 
             // lvPedidos
             // 
+            lvPedidos.FullRowSelect = true;
+            lvPedidos.GridLines = true;
+            lvPedidos.HoverSelection = true;
             lvPedidos.Location = new Point(12, 197);
+            lvPedidos.MultiSelect = false;
             lvPedidos.Name = "lvPedidos";
             lvPedidos.Size = new Size(1160, 452);
             lvPedidos.TabIndex = 0;
             lvPedidos.UseCompatibleStateImageBehavior = false;
+            lvPedidos.View = View.Details;
             // 
             // txtCpf
             // 
-            txtCpf.Location = new Point(12, 77);
+            txtCpf.Location = new Point(12, 69);
             txtCpf.Mask = "999.999.999-99";
             txtCpf.Name = "txtCpf";
             txtCpf.Size = new Size(166, 23);
@@ -56,7 +62,7 @@
             // txtNome
             // 
             txtNome.BackColor = SystemColors.Window;
-            txtNome.Location = new Point(12, 129);
+            txtNome.Location = new Point(12, 121);
             txtNome.Name = "txtNome";
             txtNome.ReadOnly = true;
             txtNome.Size = new Size(268, 23);
@@ -64,17 +70,18 @@
             // 
             // btnPesquisar
             // 
-            btnPesquisar.Location = new Point(184, 77);
+            btnPesquisar.Location = new Point(184, 69);
             btnPesquisar.Name = "btnPesquisar";
             btnPesquisar.Size = new Size(96, 23);
             btnPesquisar.TabIndex = 3;
             btnPesquisar.Text = "Pesquisar";
             btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.Click += btnPesquisar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 59);
+            label1.Location = new Point(12, 51);
             label1.Name = "label1";
             label1.Size = new Size(31, 15);
             label1.TabIndex = 4;
@@ -83,7 +90,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 111);
+            label2.Location = new Point(12, 103);
             label2.Name = "label2";
             label2.Size = new Size(43, 15);
             label2.TabIndex = 5;
@@ -99,11 +106,21 @@
             label3.TabIndex = 6;
             label3.Text = "Visualização dos Pedidos";
             // 
+            // btnConsultarPedido
+            // 
+            btnConsultarPedido.Location = new Point(1033, 168);
+            btnConsultarPedido.Name = "btnConsultarPedido";
+            btnConsultarPedido.Size = new Size(139, 23);
+            btnConsultarPedido.TabIndex = 7;
+            btnConsultarPedido.Text = "Consultar Pedido";
+            btnConsultarPedido.UseVisualStyleBackColor = true;
+            // 
             // formConsultaPedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1184, 661);
+            Controls.Add(btnConsultarPedido);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -114,6 +131,7 @@
             Name = "formConsultaPedidos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Formulário de Consulta de Pedidos";
+            Load += formConsultaPedidos_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,5 +145,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button btnConsultarPedido;
     }
 }
