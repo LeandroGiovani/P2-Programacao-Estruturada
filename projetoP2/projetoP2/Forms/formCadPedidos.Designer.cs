@@ -203,6 +203,7 @@
             btnExcluir.TabIndex = 23;
             btnExcluir.Text = "Excluir Pedido";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnRecarregar
             // 

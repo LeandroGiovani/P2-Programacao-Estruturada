@@ -13,6 +13,8 @@ namespace projetoP2.Forms
 {
     public partial class formCadPedidos : Form
     {
+        private int exclusaoIndex = -1;
+
         public formCadPedidos()
         {
             InitializeComponent();
@@ -307,9 +309,24 @@ namespace projetoP2.Forms
                     itensPedido,
                     precoTotal.ToString()
                 },
-                -1,
+                exclusaoIndex,
                 0
             );
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            exclusaoIndex = dgvPedidos.CurrentCell.RowIndex;
+
+            if (exclusaoIndex == -1)
+            {
+                MessageBox.Show("Selecione um pedido para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            CrudFuncs.ExcluirRegistro(dgvPedidos, CsvFuncs.pedidosCsv, exclusaoIndex);
+            LimparCampos();
+            exclusaoIndex = -1;
         }
     }
 }
