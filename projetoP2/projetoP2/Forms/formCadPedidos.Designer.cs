@@ -111,6 +111,7 @@
             btnLimpar.TabIndex = 21;
             btnLimpar.Text = "Limpar Campos";
             btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnRegistrar
             // 
@@ -361,6 +362,7 @@
             btnMenosItem2.Text = "-";
             btnMenosItem2.UseVisualStyleBackColor = true;
             btnMenosItem2.Visible = false;
+            btnMenosItem2.Click += btnMenosItem2_Click;
             // 
             // btnMaisItem2
             // 
@@ -372,6 +374,7 @@
             btnMaisItem2.Text = "+";
             btnMaisItem2.UseVisualStyleBackColor = true;
             btnMaisItem2.Visible = false;
+            btnMaisItem2.Click += btnMaisItem2_Click;
             // 
             // lbQuantidadeItem2
             // 
@@ -406,6 +409,7 @@
             btnConsultarItemId2.Text = "Consultar";
             btnConsultarItemId2.UseVisualStyleBackColor = true;
             btnConsultarItemId2.Visible = false;
+            btnConsultarItemId2.Click += btnConsultarItemId2_Click;
             // 
             // lbNomeItem2
             // 
@@ -489,6 +493,7 @@
             btnMenosItem3.Text = "-";
             btnMenosItem3.UseVisualStyleBackColor = true;
             btnMenosItem3.Visible = false;
+            btnMenosItem3.Click += btnMenosItem3_Click;
             // 
             // btnMaisItem3
             // 
@@ -500,6 +505,7 @@
             btnMaisItem3.Text = "+";
             btnMaisItem3.UseVisualStyleBackColor = true;
             btnMaisItem3.Visible = false;
+            btnMaisItem3.Click += btnMaisItem3_Click;
             // 
             // lbQuantidadeItem3
             // 
@@ -534,6 +540,7 @@
             btnConsultarItemId3.Text = "Consultar";
             btnConsultarItemId3.UseVisualStyleBackColor = true;
             btnConsultarItemId3.Visible = false;
+            btnConsultarItemId3.Click += btnConsultarItemId3_Click;
             // 
             // lbNomeItem3
             // 

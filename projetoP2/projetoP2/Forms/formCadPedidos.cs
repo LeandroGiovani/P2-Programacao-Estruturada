@@ -18,6 +18,33 @@ namespace projetoP2.Forms
             InitializeComponent();
         }
 
+        private void LimparCampos(int totalItens = 3)
+        {
+            txtCpf.Text = string.Empty;
+            txtNome.Text = string.Empty;
+
+            for (int i = 1; i <= totalItens; i++)
+            {
+                var txtItemId = Controls.Find($"txtItemId{i}", true).FirstOrDefault() as TextBox;
+                var txtItemNome = Controls.Find($"txtItemNome{i}", true).FirstOrDefault() as TextBox;
+                var txtQtdItem = Controls.Find($"txtQtdItem{i}", true).FirstOrDefault() as TextBox;
+                var txtTotalItem = Controls.Find($"txtTotalItem{i}", true).FirstOrDefault() as TextBox;
+
+                if (txtItemId != null) txtItemId.Text = string.Empty;
+                if (txtItemNome != null) txtItemNome.Text = string.Empty;
+                if (txtQtdItem != null) txtQtdItem.Text = string.Empty;
+                if (txtTotalItem != null)
+                {
+                    txtTotalItem.Text = string.Empty;
+                    txtTotalItem.Tag = null;
+                }
+            }
+
+            lbPreco.Text = "0.00";
+            RecalcularValores();
+        }
+
+
         private void AcionarItemInputs(int qtd)
         {
             Control[] item2Controls = new Control[]
@@ -81,6 +108,33 @@ namespace projetoP2.Forms
             RecalcularValores();
         }
 
+        private void ConsultarItemPorId(int itemNumero)
+        {
+            var txtItemId = Controls.Find($"txtItemId{itemNumero}", true).FirstOrDefault() as TextBox;
+            var txtItemNome = Controls.Find($"txtItemNome{itemNumero}", true).FirstOrDefault() as TextBox;
+            var txtQtdItem = Controls.Find($"txtQtdItem{itemNumero}", true).FirstOrDefault() as TextBox;
+            var txtTotalItem = Controls.Find($"txtTotalItem{itemNumero}", true).FirstOrDefault() as TextBox;
+
+            if (txtItemId == null || txtItemNome == null || txtQtdItem == null || txtTotalItem == null)
+                return;
+
+            string[]? consultaId = CrudFuncs.LerRegistroPorCampoUnico(CsvFuncs.produtosCsv, 0, txtItemId.Text.Trim());
+
+            txtItemNome.Text = consultaId?[1] ?? string.Empty;
+
+            if (!string.IsNullOrEmpty(txtItemNome.Text))
+            {
+                txtQtdItem.Text = "1";
+
+                string precoUnit = consultaId?[2].Replace("R$", "").Trim() ?? "0.00";
+                txtTotalItem.Tag = precoUnit;
+                txtTotalItem.Text = precoUnit;
+            }
+
+            RecalcularValores();
+        }
+
+
         private void RecalcularValores()
         {
             decimal totalPedido = 0;
@@ -141,20 +195,12 @@ namespace projetoP2.Forms
 
         private void btnConsultarItemId1_Click(object sender, EventArgs e)
         {
-            string[]? consultaId = CrudFuncs.LerRegistroPorCampoUnico(CsvFuncs.produtosCsv, 0, txtItemId1.Text.Trim());
+            ConsultarItemPorId(1);
+        }
 
-            txtItemNome1.Text = consultaId?[1] ?? string.Empty;
-
-            if (!string.IsNullOrEmpty(txtItemNome1.Text))
-            {
-                txtQtdItem1.Text = "1";
-
-                string precoUnit = consultaId?[2].Replace("R$", "").Trim() ?? "0.00";
-                txtTotalItem1.Tag = precoUnit;
-                txtTotalItem1.Text = precoUnit;
-            }
-
-            RecalcularValores();
+        private void btnMenosItem1_Click(object sender, EventArgs e)
+        {
+            AlterarQuantidade("-", 1);
         }
 
         private void btnMaisItem1_Click(object sender, EventArgs e)
@@ -162,9 +208,39 @@ namespace projetoP2.Forms
             AlterarQuantidade("+", 1);
         }
 
-        private void btnMenosItem1_Click(object sender, EventArgs e)
+        private void btnConsultarItemId2_Click(object sender, EventArgs e)
         {
-            AlterarQuantidade("-", 1);
+            ConsultarItemPorId(2);
         }
+
+        private void btnMenosItem2_Click(object sender, EventArgs e)
+        {
+            AlterarQuantidade("-", 2);
+        }
+
+        private void btnMaisItem2_Click(object sender, EventArgs e)
+        {
+            AlterarQuantidade("+", 2);
+        }
+
+        private void btnConsultarItemId3_Click(object sender, EventArgs e)
+        {
+            ConsultarItemPorId(3);
+        }
+
+        private void btnMenosItem3_Click(object sender, EventArgs e)
+        {
+            AlterarQuantidade("-", 3);
+        }
+
+        private void btnMaisItem3_Click(object sender, EventArgs e)
+        {
+            AlterarQuantidade("+", 3);
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }   
     }
 }
