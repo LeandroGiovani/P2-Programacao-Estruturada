@@ -1,6 +1,6 @@
 Código Identificador,Nome do Produto,Preço,Descrição
-1,Produto 1,R$ 1100.25,Teste
-2,Produto 2,R$ 950.11,Teste
-3,Produto 3,R$ 50.56,Teste
-4,Produto 4,R$ 2.21,Teste
-5,Produto 5,R$ 15420.97,Teste
+P001,Cadeira Ergonômica,749.90,Cadeira de escritório com ajuste lombar e apoio de braço.
+P002,Notebook TechPro 15,3899.00,Notebook com processador Intel i7 16GB RAM e SSD 512GB.
+P003,Fone Bluetooth WaveSound,299.90,Fones de ouvido sem fio com cancelamento de ruído.
+P004,Monitor UltraWide 29,1349.00,Monitor 29 polegadas ultrawide Full HD com entrada HDMI.
+P005,Mouse Gamer HyperClick,189.99,Mouse com sensor de alta precisão e iluminação RGB.

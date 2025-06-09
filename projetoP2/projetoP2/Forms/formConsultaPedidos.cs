@@ -37,6 +37,10 @@ namespace projetoP2.Forms
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            lvConsultaPedido.Items.Clear();
+            lbIdPedido.Text = "Identificador do Pedido:";
+            lbValorTotal.Text = "Valor Total do Pedido -:";
+
             string cpf = txtCpf.Text.Trim();
 
             string[]? consultaCliente = CrudFuncs.LerRegistroPorCampoUnico(CsvFuncs.clientesCsv, 1, cpf);

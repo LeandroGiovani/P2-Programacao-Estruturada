@@ -1,3 +1,6 @@
 ID Registro,CPF Cliente,Itens do Pedido,Preço Total
-2,123.123.123-12,3 - Produto 3 (3); 4 - Produto 4 (6); 5 - Produto 5 (11),R$ 169795.61
-3,123.123.123-17,3 - Produto 3 (2); 5 - Produto 5 (3),R$ 46364.03
+1001,234.567.890-12,P001 - Cadeira Ergonômica (3); P002 - Notebook TechPro 15 (7); P003 - Fone Bluetooth WaveSound (5),R$ 31042.20
+1002,123.456.789-01,P002 - Notebook TechPro 15 (2); P005 - Mouse Gamer HyperClick (3),R$ 8367.97
+1003,345.678.901-23,P003 - Fone Bluetooth WaveSound (2),R$ 599.80
+1004,456.789.012-34,P002 - Notebook TechPro 15 (3); P005 - Mouse Gamer HyperClick (2); P001 - Cadeira Ergonômica (2),R$ 13576.78
+1005,567.890.123-45,P002 - Notebook TechPro 15 (2); P001 - Cadeira Ergonômica (2); P003 - Fone Bluetooth WaveSound (1),R$ 9597.70
